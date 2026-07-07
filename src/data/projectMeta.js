@@ -1,0 +1,95 @@
+export const PROJECT_META = [
+  {
+    id: 1,
+    slug: "backend-js-dicoding",
+    title: "Back-End JavaScript",
+    category: "Dicoding Certificate",
+    color: "bg-lime-400",
+    img: "/certificates/backend-js-dicoding.webp",
+  },
+  {
+    id: 2,
+    slug: "javascript-dicoding",
+    title: "Dasar JavaScript",
+    category: "Dicoding Certificate",
+    color: "bg-purple-400",
+    img: "/certificates/javascript-dicoding.webp",
+  },
+  {
+    id: 3,
+    slug: "dasar-ai-dicoding",
+    title: "Dasar AI",
+    category: "Dicoding Certificate",
+    color: "bg-orange-400",
+    img: "/certificates/dasar-ai-dicoding.webp",
+  },
+  {
+    id: 4,
+    slug: "cloud-genai-aws-dicoding",
+    title: "Cloud & Gen AI AWS",
+    category: "Dicoding Certificate",
+    color: "bg-blue-400",
+    img: "/certificates/cloud-genai-aws-dicoding.webp",
+  },
+  {
+    id: 5,
+    slug: "ibm-granite-credly",
+    title: "IBM Granite Data",
+    category: "IBM SkillsBuild",
+    color: "bg-cyan-400",
+    img: "/certificates/ibm-granite-credly.webp",
+  },
+  {
+    id: 6,
+    slug: "skillsbuild-data-classification-summarization",
+    title: "IBM Granite Summary",
+    category: "IBM SkillsBuild",
+    color: "bg-teal-400",
+    img: "/certificates/skillsbuild-data-classification-summarization.webp",
+  },
+  {
+    id: 7,
+    slug: "hacktiv8-data-classification-summarization",
+    title: "Data Classification",
+    category: "Hacktiv8 x IBM",
+    color: "bg-pink-400",
+    img: "/certificates/hacktiv8-data-classification-summarization.webp",
+  },
+  {
+    id: 8,
+    slug: "skillsbuild-classifying-data",
+    title: "Classifying Data",
+    category: "IBM SkillsBuild",
+    color: "bg-green-400",
+    img: "/certificates/skillsbuild-classifying-data.webp",
+  },
+  {
+    id: 9,
+    slug: "skillsbuild-summarizing-data",
+    title: "Summarizing Data",
+    category: "IBM SkillsBuild",
+    color: "bg-amber-400",
+    img: "/certificates/skillsbuild-summarizing-data.webp",
+  },
+  {
+    id: 10,
+    slug: "ukm-al-banna-peserta",
+    title: "Peserta UKM Al Banna",
+    category: "Achievement Certificate",
+    color: "bg-sky-400",
+    img: "/certificates/ukm-al-banna-peserta.webp",
+  },
+  {
+    id: 11,
+    slug: "futsal-juara-1",
+    title: "Juara 1 Futsal",
+    category: "Achievement Certificate",
+    color: "bg-violet-400",
+    img: "/certificates/futsal-juara-1.webp",
+  },
+];
+
+export const PROJECT_META_BY_SLUG = PROJECT_META.reduce((accumulator, item) => {
+  accumulator[item.slug] = item;
+  return accumulator;
+}, {});
