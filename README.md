@@ -216,8 +216,7 @@ serverless proxy. To report a vulnerability or for full guidance, see
 
 ## Deploy
 
-Deploy the generated `build/` folder to any static host (Netlify, Vercel, Cloudflare
-Pages, GitHub Pages, etc.). Because this is an SPA, configure a rewrite/fallback so all
+Deploy the generated `build/` folder to any static host (Netlify, GitHub Pages, etc.). Because this is an SPA, configure a rewrite/fallback so all
 routes serve `index.html`; otherwise deep links such as project detail routes will 404
 on direct load.
 
