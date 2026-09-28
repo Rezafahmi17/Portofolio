@@ -50,6 +50,15 @@ export const PORTFOLIO_DATA = {
         "Completed Belajar Back-End Pemula dengan JavaScript covering Node.js, RESTful API, web service basics, Postman testing, and Amazon EC2 deployment concepts.",
       ],
     },
+    {
+      title: "IBM SkillsBuild — Getting Started with Data & AI Agents",
+      period: "Sep 2026",
+      description: [
+        "Completed Getting Started with Data (Earn a credential!) — earned a verified IBM Credly badge for foundational data literacy.",
+        "Completed Unleashing the Power of AI Agents — studied agentic AI architecture, LLM-based automation, and AI agent design patterns.",
+        "Completed Classifying Data Using IBM Granite — advanced hands-on data classification using IBM Granite generative AI.",
+      ],
+    },
   ],
   techStack: [
     { name: "JavaScript", category: "Programming" },
@@ -60,16 +69,21 @@ export const PORTFOLIO_DATA = {
     { name: "React", category: "Frontend" },
     { name: "Vite", category: "Frontend" },
     { name: "Tailwind CSS", category: "Frontend" },
+    { name: "GSAP Animations", category: "Frontend" },
     { name: "MySQL", category: "Database" },
     { name: "Supabase", category: "Backend / Database" },
     { name: "Artificial Intelligence", category: "AI" },
+    { name: "AI Agents", category: "AI" },
     { name: "Machine Learning", category: "AI" },
     { name: "Deep Learning Basics", category: "AI" },
     { name: "IBM Granite", category: "Generative AI" },
     { name: "Data Classification", category: "Data" },
     { name: "Data Summarization", category: "Data" },
+    { name: "Data Fundamentals", category: "Data" },
+    { name: "Data Literacy", category: "Data" },
     { name: "AWS Cloud", category: "Cloud" },
     { name: "Amazon EC2", category: "Cloud" },
+    { name: "Netlify", category: "Deployment" },
     { name: "Git", category: "Tools" },
   ],
   projects: [
@@ -78,6 +92,12 @@ export const PORTFOLIO_DATA = {
       title: "Kopi Nusantara QR Ordering",
       category: "Featured Web Project",
       description: "QR-based coffee ordering website that lets customers view the menu and order without queuing at the cashier.",
+    },
+    {
+      slug: "portfolio-website-smanrp",
+      title: "Portfolio Website (SMAN 1 Rajabasa Permai)",
+      category: "Featured Web Project",
+      description: "Personal portfolio website built with React + Vite, GSAP animations, AI chat assistant, and deployed on Netlify.",
     },
     {
       slug: "backend-js-dicoding",
@@ -109,6 +129,30 @@ export const PORTFOLIO_DATA = {
       category: "IBM SkillsBuild",
       description: "Data classification and summarization using IBM Granite.",
     },
+    {
+      slug: "skillsbuild-classifying-data-2026",
+      title: "Classifying Data Using IBM Granite (2026)",
+      category: "IBM SkillsBuild",
+      description: "Advanced data classification using IBM Granite — completed Sep 2026. Learning hours: 1h 30m.",
+    },
+    {
+      slug: "skillsbuild-getting-started-data",
+      title: "Getting Started with Data",
+      category: "IBM SkillsBuild",
+      description: "IBM SkillsBuild credential for foundational data literacy and data management concepts — Sep 2026.",
+    },
+    {
+      slug: "skillsbuild-ai-agents",
+      title: "Unleashing the Power of AI Agents",
+      category: "IBM SkillsBuild",
+      description: "Deep dive into AI Agents, agentic AI architecture, and LLM-powered automation — completed Sep 2026.",
+    },
+    {
+      slug: "skillsbuild-getting-started-data-credly",
+      title: "Getting Started with Data (Credly Badge)",
+      category: "IBM SkillsBuild",
+      description: "Verified Credly badge from IBM SkillsBuild for Getting Started with Data — Sep 2026.",
+    },
   ],
   achievements: [
     {
@@ -123,6 +167,16 @@ export const PORTFOLIO_DATA = {
       },
     },
     {
+      title: "Personal Portfolio Website",
+      project: "Portfolio SMAN 1 Rajabasa Permai",
+      description:
+        "Professional portfolio website built with React + Vite, GSAP scroll animations, AI Chat Assistant, and deployed live on Netlify — showcasing all certificates, projects, and skills.",
+      techStack: ["React", "Vite", "Tailwind CSS", "GSAP", "JavaScript", "Netlify"],
+      links: {
+        live: "https://sma-n-1-rajabasa-permai-plus.netlify.app/",
+      },
+    },
+    {
       title: "Juara 1 Futsal",
       project: "Piala Futsal Umum Putra",
       description: "Achievement certificate for teamwork, discipline, and competitive spirit.",
@@ -133,9 +187,12 @@ export const PORTFOLIO_DATA = {
   capabilities: [
     "JavaScript & Node.js",
     "RESTful API Development",
-    "AI Fundamentals",
+    "AI Fundamentals & AI Agents",
     "IBM Granite Data Processing",
+    "Data Fundamentals & Literacy",
     "AWS Cloud Basics",
     "Responsive Web Development",
+    "React + Vite Web Apps",
+    "Deployment (Netlify / AWS EC2)",
   ],
 };

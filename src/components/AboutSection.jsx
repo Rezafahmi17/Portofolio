@@ -18,6 +18,17 @@ const achievements = [
     description:
       "A QR-based coffee ordering website that combines responsive UI, menu ordering flow, and admin-ready product thinking.",
   },
+  {
+    icon: ArrowUpRight,
+    rank: "Live",
+    category: "Featured Web Project",
+    title: "Portfolio Website",
+    event: "SMAN 1 Rajabasa Permai Plus — Personal Portfolio",
+    year: "2026",
+    description:
+      "Professional portfolio website built with React + Vite, GSAP animations, and an AI Chat Assistant — deployed live on Netlify.",
+    link: "https://sma-n-1-rajabasa-permai-plus.netlify.app/",
+  },
 ];
 
 const STATS = [
@@ -29,8 +40,11 @@ const STATS = [
 const CAPABILITIES = [
   "JavaScript & Node.js",
   "RESTful API Development",
-  "AI & Data Fundamentals",
+  "AI Agents & AI Fundamentals",
+  "IBM Granite Data Processing",
+  "Data Fundamentals & Literacy",
   "AWS Cloud Basics",
+  "React + Vite Web Apps",
 ];
 
 /* ─────────────────────────────────────────
@@ -111,11 +125,11 @@ const AchievementCard = ({ achievement, index, onClick }) => {
         {/* Footer CTA */}
         <div className="mt-6 pt-5 border-t border-black/[0.07] flex items-center justify-between">
           <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/28">
-            Click to view explanation
+            {achievement.link ? "Click to visit live" : "Click to view explanation"}
           </span>
           <div className="flex items-center gap-1.5 text-black/38 group-hover:text-black transition-colors duration-300">
             <span className="font-mono text-[9px] uppercase tracking-[0.16em] font-bold">
-              Open Project
+              {achievement.link ? "View Live" : "Open Project"}
             </span>
             <ArrowUpRight
               size={13}
@@ -133,6 +147,14 @@ const AchievementCard = ({ achievement, index, onClick }) => {
    ───────────────────────────────────────── */
 const AboutSection = memo(function AboutSection() {
   const [showHackathonDetail, setShowHackathonDetail] = useState(false);
+
+  const handleAchievementClick = (achievement) => {
+    if (achievement.link) {
+      window.open(achievement.link, "_blank", "noreferrer");
+    } else {
+      setShowHackathonDetail(true);
+    }
+  };
 
   return (
     <section
@@ -287,7 +309,7 @@ const AboutSection = memo(function AboutSection() {
               className="flex items-center gap-3 mb-8 md:mb-9"
             >
               <span className="font-mono text-[10px] md:text-[10.5px] uppercase tracking-[0.2em] text-black/35">
-JavaScript · Back-End API · AI Fundamentals · AWS Cloud
+JavaScript · Back-End API · AI Agents · IBM SkillsBuild · AWS Cloud
               </span>
             </Gsap.div>
 
@@ -303,7 +325,7 @@ JavaScript · Back-End API · AI Fundamentals · AWS Cloud
                 I'm <strong className="text-black font-semibold">Reza Fahmi Alkhamdani</strong>, a web developer learner focused on building useful digital products with a strong JavaScript, back-end, AI, and cloud foundation.
               </p>
               <p>
-                My skills are supported by Dicoding certificates in JavaScript, Back-End JavaScript, Dasar AI, Cloud & Gen AI AWS, plus IBM SkillsBuild certificates for data classification and summarization using IBM Granite.
+                My skills are backed by Dicoding certificates in JavaScript, Back-End JavaScript, Dasar AI, Cloud &amp; Gen AI AWS, plus IBM SkillsBuild certificates including Data Classification, Summarization, <strong className="text-black/75 font-semibold">Getting Started with Data</strong>, <strong className="text-black/75 font-semibold">Unleashing the Power of AI Agents</strong>, and a verified Credly badge from IBM.
               </p>
             </Gsap.div>
 
@@ -348,7 +370,7 @@ JavaScript · Back-End API · AI Fundamentals · AWS Cloud
                   </p>
                   <div className="flex-1 h-px bg-gradient-to-r from-black/[0.1] to-transparent" />
                   <span className="font-mono text-[9px] font-bold border border-black/[0.1] bg-white px-2.5 py-1 rounded-[2px] text-black/35 tabular-nums">
-                    {achievements.length} Award{achievements.length !== 1 ? "s" : ""}
+                    {achievements.length} Featured
                   </span>
                 </div>
 
@@ -358,7 +380,7 @@ JavaScript · Back-End API · AI Fundamentals · AWS Cloud
                       key={index}
                       achievement={achievement}
                       index={index}
-                      onClick={() => setShowHackathonDetail(true)}
+                      onClick={() => handleAchievementClick(achievement)}
                     />
                   ))}
                 </div>

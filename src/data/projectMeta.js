@@ -87,6 +87,46 @@ export const PROJECT_META = [
     color: "bg-violet-400",
     img: "/certificates/futsal-juara-1.webp",
   },
+  {
+    id: 12,
+    slug: "skillsbuild-classifying-data-2026",
+    title: "Classifying Data (IBM Granite)",
+    category: "IBM SkillsBuild",
+    color: "bg-indigo-400",
+    img: "/certificates/skillsbuild-classifying-data-2026.webp",
+  },
+  {
+    id: 13,
+    slug: "skillsbuild-getting-started-data",
+    title: "Getting Started with Data",
+    category: "IBM SkillsBuild",
+    color: "bg-emerald-400",
+    img: "/certificates/skillsbuild-getting-started-data.webp",
+  },
+  {
+    id: 14,
+    slug: "skillsbuild-ai-agents",
+    title: "Unleashing the Power of AI Agents",
+    category: "IBM SkillsBuild",
+    color: "bg-rose-400",
+    img: "/certificates/skillsbuild-ai-agents.webp",
+  },
+  {
+    id: 15,
+    slug: "skillsbuild-getting-started-data-credly",
+    title: "Getting Started with Data (Credly)",
+    category: "IBM SkillsBuild",
+    color: "bg-teal-500",
+    img: "/certificates/skillsbuild-getting-started-data-credly.webp",
+  },
+  {
+    id: 16,
+    slug: "portfolio-website-smanrp",
+    title: "Portfolio Website SMAN 1 Rajabasa",
+    category: "Featured Web Project",
+    color: "bg-lime-500",
+    img: "/hackathon-base/sman1-portfolio.png",
+  },
 ];
 
 export const PROJECT_META_BY_SLUG = PROJECT_META.reduce((accumulator, item) => {
