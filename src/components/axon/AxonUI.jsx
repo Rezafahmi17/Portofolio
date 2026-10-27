@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import CardStudyModal from './CardStudyModal';
 import ProfileDetailModal from './ProfileDetailModal';
 import { PORTFOLIO_DATA } from '../../data/portfolioData';
@@ -364,12 +364,176 @@ export default function AxonUI({
   const [selectedCard, setSelectedCard] = useState(null);
   const [hoveredCardId, setHoveredCardId] = useState(null);
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+  const [mobileTab, setMobileTab] = useState('cards'); // 'cards' | 'profile'
+  const [isDesktop, setIsDesktop] = useState(
+    typeof window !== 'undefined' ? window.innerWidth >= 1024 : true
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Filter cards based on active tag
   const filteredCards = useMemo(() => {
     if (activeTag === 'ALL') return VERIFIED_ITEMS;
     return VERIFIED_ITEMS.filter((item) => item.filterTag === activeTag);
   }, [activeTag]);
+
+  // Card Item Component
+  const renderCard = (card, isMobile = false) => {
+    const isHovered = hoveredCardId === card.id;
+
+    return (
+      <div
+        key={card.id}
+        onClick={() => setSelectedCard(card)}
+        onMouseEnter={() => setHoveredCardId(card.id)}
+        onMouseLeave={() => setHoveredCardId(null)}
+        className="group p-2.5 rounded-xl border border-white/10 bg-[#0c0c12]/85 backdrop-blur-md cursor-pointer transition-all duration-300 hover:border-[#aa88ff]/70 hover:shadow-[0_8px_30px_rgba(170,136,255,0.18)] hover:-translate-y-0.5"
+      >
+        {/* Thumbnail Image Container */}
+        <div
+          className={`relative ${
+            isMobile ? 'h-[170px]' : 'h-[155px]'
+          } rounded-lg overflow-hidden bg-black/60 border border-white/10`}
+        >
+          <img
+            src={card.img}
+            alt={card.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+          {/* Subtle Gradient Shadow */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none" />
+
+          {/* Top-Right Action Pill */}
+          <div className="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-black/75 backdrop-blur border border-white/10 text-[9px] text-[#aa88ff] opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 font-mono">
+            <ArrowUpRight size={11} />
+            <span>INSPECT</span>
+          </div>
+
+          {/* Bottom-Left Category Tag */}
+          <div className="absolute bottom-2 left-2 px-1.5 py-0.5 rounded bg-black/80 backdrop-blur border border-white/15 text-[8.5px] text-white/90 font-mono">
+            {card.category}
+          </div>
+        </div>
+
+        {/* Card Title & Meta Row */}
+        <div className="mt-2.5 flex items-start justify-between gap-2 text-[11px] font-mono leading-tight">
+          <div className="text-white font-medium group-hover:text-[#aa88ff] transition-colors line-clamp-1">
+            {card.title}
+          </div>
+          <div className="text-[#8a8a8a] text-right shrink-0 text-[10px]">
+            VERIFIED
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  // Profile Dossier Content
+  const renderProfileDossier = (isMobile = false) => (
+    <div className="space-y-4">
+      {/* Section 1: Profile & Bio */}
+      <div>
+        <div className="flex items-center justify-between mb-1.5">
+          <span className="text-[11px] text-[#aa88ff] font-semibold tracking-wider flex items-center gap-1.5">
+            <Sparkles size={12} />
+            <span>[PROFILE // REZA FAHMI]</span>
+          </span>
+          <button
+            onClick={() => setIsProfileModalOpen(true)}
+            className="text-[9.5px] text-[#aaaaaa] underline hover:text-white transition-colors cursor-pointer"
+          >
+            FULL DOSSIER
+          </button>
+        </div>
+        <p className="text-[11.5px] text-[#cccccc] leading-relaxed">
+          {PORTFOLIO_DATA.profile.bio}
+        </p>
+      </div>
+
+      {/* Section 2: Experience & Certifications Track */}
+      <div className="pt-2 border-t border-white/10">
+        <span className="text-[11px] text-[#aa88ff] font-semibold tracking-wider flex items-center gap-1.5 mb-1.5">
+          <Award size={12} />
+          <span>[EXPERIENCE & CREDENTIALS]</span>
+        </span>
+        <ul className="space-y-1 text-[11px] text-[#bbbbbb] leading-normal">
+          <li>• IBM SkillsBuild — AI Agents & Data (2026)</li>
+          <li>• Dicoding x AWS — Back-End & Cloud Gen AI (2025)</li>
+          <li>• IBM SkillsBuild x Hacktiv8 — IBM Granite (2025)</li>
+          <li>• Dicoding Academy — AI & JavaScript (2025)</li>
+        </ul>
+      </div>
+
+      {/* Section 3: Core Technical Capabilities */}
+      <div className="pt-2 border-t border-white/10">
+        <span className="text-[11px] text-[#aa88ff] font-semibold tracking-wider flex items-center gap-1.5 mb-1.5">
+          <Code size={12} />
+          <span>[CORE CAPABILITIES]</span>
+        </span>
+        <div className="flex flex-wrap gap-1.5">
+          {PORTFOLIO_DATA.capabilities.slice(0, 7).map((cap, idx) => (
+            <span
+              key={idx}
+              className="px-2 py-0.5 rounded text-[9.5px] bg-[#14141e] border border-white/10 text-[#dddddd]"
+            >
+              {cap}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Section 4: Action Links & Contact */}
+      <div className="pt-2 border-t border-white/10 space-y-1.5 text-[11px]">
+        <a
+          href="/cv.pdf"
+          download="CV_Reza_Fahmi_Alkhamdani.pdf"
+          className="flex items-center justify-between p-2 rounded bg-[#aa88ff] text-black font-bold hover:bg-white transition-colors cursor-pointer"
+        >
+          <span>DOWNLOAD CV (.PDF)</span>
+          <FileDown size={13} />
+        </a>
+
+        <div className="grid grid-cols-2 gap-2 pt-1 text-[10.5px]">
+          <a
+            href={PORTFOLIO_DATA.profile.socials.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 p-1.5 rounded border border-white/10 bg-[#12121a] hover:border-[#aa88ff] transition-colors text-white"
+          >
+            <Github size={12} />
+            <span>GITHUB</span>
+          </a>
+          <a
+            href={PORTFOLIO_DATA.profile.socials.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 p-1.5 rounded border border-white/10 bg-[#12121a] hover:border-[#aa88ff] transition-colors text-white"
+          >
+            <Linkedin size={12} />
+            <span>LINKEDIN</span>
+          </a>
+        </div>
+
+        {/* Quick jump to documents on mobile */}
+        {isMobile && (
+          <button
+            onClick={() => setMobileTab('cards')}
+            className="w-full mt-2 py-1.5 px-3 rounded border border-[#aa88ff]/40 bg-[#aa88ff]/10 text-[#aa88ff] text-[10px] hover:bg-[#aa88ff]/20 transition-colors font-mono cursor-pointer flex items-center justify-center gap-1"
+          >
+            <span>LIHAT 13 DOKUMEN & PROYEK TERVERIFIKASI</span>
+            <ArrowUpRight size={12} />
+          </button>
+        )}
+      </div>
+    </div>
+  );
 
   return (
     <>
@@ -382,18 +546,26 @@ export default function AxonUI({
           fontSize: '13px',
           lineHeight: '1.35',
           letterSpacing: '0.02em',
-          transform: `perspective(1200px) rotateX(${tiltY * -4.0}deg) rotateY(${tiltX * 4.0}deg) translateZ(0)`,
+          transform: isDesktop
+            ? `perspective(1200px) rotateX(${tiltY * -4.0}deg) rotateY(${tiltX * 4.0}deg) translateZ(0)`
+            : 'none',
           transition: 'transform 0.12s cubic-bezier(0.1, 0.5, 0.1, 1)',
         }}
       >
         {/* TOP BAR BRAND (LEFT) */}
         <div
-          className="brand absolute top-[20px] left-[24px] flex items-center gap-[12px] pointer-events-auto cursor-pointer group"
-          onClick={() => setIsProfileModalOpen(true)}
+          className="brand absolute top-3 sm:top-[20px] left-3 sm:left-[24px] flex items-center gap-2.5 sm:gap-[12px] pointer-events-auto cursor-pointer group z-30"
+          onClick={() => {
+            if (isDesktop) {
+              setIsProfileModalOpen(true);
+            } else {
+              setMobileTab('profile');
+            }
+          }}
           title="Buka Profil Lengkap Reza Fahmi Alkhamdani"
         >
           {/* Circular Glass Lens Avatar */}
-          <div className="relative w-11 h-11 rounded-full p-[2px] glass-panel transition-transform duration-300 group-hover:scale-105 group-hover:border-[#aa88ff]">
+          <div className="relative w-9 h-9 sm:w-11 sm:h-11 rounded-full p-[2px] glass-panel transition-transform duration-300 group-hover:scale-105 group-hover:border-[#aa88ff] shrink-0">
             <div className="relative w-full h-full rounded-full overflow-hidden border border-white/20">
               <img
                 src="/profile.webp"
@@ -402,26 +574,26 @@ export default function AxonUI({
               />
             </div>
             {/* Emerald Online Status Dot */}
-            <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-400 border-2 border-black" />
+            <span className="absolute bottom-0 right-0 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-400 border-2 border-black" />
           </div>
 
           <div className="flex flex-col">
-            <div className="flex items-center gap-2">
-              <span className="text-[17px] font-bold tracking-wider text-white group-hover:text-[#aa88ff] transition-colors">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="text-[14px] sm:text-[17px] font-bold tracking-wider text-white group-hover:text-[#aa88ff] transition-colors leading-tight">
                 REZA FAHMI
               </span>
-              <span className="px-1.5 py-0.5 rounded text-[8.5px] bg-[#aa88ff]/20 text-[#aa88ff] border border-[#aa88ff]/40 font-semibold">
+              <span className="px-1 sm:px-1.5 py-0.2 sm:py-0.5 rounded text-[7.5px] sm:text-[8.5px] bg-[#aa88ff]/20 text-[#aa88ff] border border-[#aa88ff]/40 font-semibold">
                 VERIFIED
               </span>
             </div>
-            <span className="text-[11px] text-[#8a8a8a] tracking-normal">
+            <span className="text-[9.5px] sm:text-[11px] text-[#8a8a8a] tracking-normal leading-tight">
               AI & Full-Stack Developer
             </span>
           </div>
         </div>
 
         {/* TOP BAR COUNTER & SENSOR BADGE (RIGHT) */}
-        <div className="absolute top-[20px] right-[24px] flex items-center gap-3 pointer-events-auto">
+        <div className="absolute top-3 sm:top-[20px] right-3 sm:right-[24px] flex items-center gap-2 sm:gap-3 pointer-events-auto z-30">
           {/* Gyroscope / Tilt Sensor Badge */}
           <button
             onClick={onRequestPermission}
@@ -437,19 +609,119 @@ export default function AxonUI({
 
           {/* Counter Badge */}
           <div
-            className="w-[46px] h-[46px] rounded-full border border-white/15 bg-[#0e0e14]/90 flex flex-col items-center justify-center cursor-pointer glass-panel transition-all duration-300 hover:border-[#aa88ff] hover:scale-105"
-            onClick={() => setActiveTag('ALL')}
+            className="w-9 h-9 sm:w-[46px] sm:h-[46px] rounded-full border border-white/15 bg-[#0e0e14]/90 flex flex-col items-center justify-center cursor-pointer glass-panel transition-all duration-300 hover:border-[#aa88ff] hover:scale-105"
+            onClick={() => {
+              setActiveTag('ALL');
+              setMobileTab('cards');
+            }}
             title="13 Dokumen Terverifikasi"
           >
-            <span className="font-mono font-bold text-[13px] text-white leading-none">
+            <span className="font-mono font-bold text-[11px] sm:text-[13px] text-white leading-none">
               13
             </span>
-            <span className="text-[7.5px] text-[#8a8a8a] mt-0.5 font-semibold">DOCS</span>
+            <span className="text-[6.5px] sm:text-[7.5px] text-[#8a8a8a] mt-0.5 font-semibold">
+              DOCS
+            </span>
           </div>
         </div>
 
-        {/* FILTER TAGS (CHIPS) */}
-        <div className="tags absolute top-[100px] left-[24px] w-[350px] flex flex-wrap gap-[6px] pointer-events-auto z-20">
+        {/* ============================================================ */}
+        {/* MOBILE SEGMENTED CONTROL (TABS) - Visible only on < lg screens */}
+        {/* ============================================================ */}
+        <div className="absolute top-[64px] sm:top-[74px] inset-x-3 sm:inset-x-6 flex items-center justify-center lg:hidden z-30 pointer-events-auto">
+          <div className="w-full max-w-[440px] p-1 rounded-xl border border-white/15 bg-[#0e0e16]/90 backdrop-blur-xl flex gap-1 shadow-2xl">
+            <button
+              onClick={() => setMobileTab('cards')}
+              className={`flex-1 py-1.5 sm:py-2 px-2.5 rounded-lg text-[10px] sm:text-[11px] font-mono font-semibold transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+                mobileTab === 'cards'
+                  ? 'bg-[#aa88ff] text-black shadow-[0_0_15px_rgba(170,136,255,0.4)]'
+                  : 'text-[#aaaaaa] hover:text-white hover:bg-white/5'
+              }`}
+            >
+              <span>DOKUMEN & PROYEK</span>
+              <span
+                className={`px-1.5 py-0.2 rounded text-[8.5px] ${
+                  mobileTab === 'cards'
+                    ? 'bg-black/20 text-black font-bold'
+                    : 'bg-white/10 text-white'
+                }`}
+              >
+                {filteredCards.length}
+              </span>
+            </button>
+            <button
+              onClick={() => setMobileTab('profile')}
+              className={`flex-1 py-1.5 sm:py-2 px-2.5 rounded-lg text-[10px] sm:text-[11px] font-mono font-semibold transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+                mobileTab === 'profile'
+                  ? 'bg-[#aa88ff] text-black shadow-[0_0_15px_rgba(170,136,255,0.4)]'
+                  : 'text-[#aaaaaa] hover:text-white hover:bg-white/5'
+              }`}
+            >
+              <span>PROFIL & CV</span>
+            </button>
+          </div>
+        </div>
+
+        {/* ============================================================ */}
+        {/* MOBILE VIEW: DOKUMEN & PROYEK (TAGS + CARDS LIST) */}
+        {/* ============================================================ */}
+        {mobileTab === 'cards' && (
+          <div className="lg:hidden">
+            {/* Filter Chips (Horizontal Swipe) */}
+            <div className="absolute top-[114px] sm:top-[126px] inset-x-3 sm:inset-x-6 flex items-center gap-1.5 overflow-x-auto no-scrollbar pointer-events-auto z-20 pb-1.5">
+              {TAGS.map((tag) => {
+                const isActive = activeTag === tag;
+                return (
+                  <button
+                    key={tag}
+                    onClick={() => setActiveTag(tag)}
+                    className={`px-2.5 py-1 text-[9.5px] rounded font-mono shrink-0 select-none border transition-all cursor-pointer ${
+                      isActive
+                        ? 'bg-white text-black font-bold border-white shadow-[0_0_12px_rgba(255,255,255,0.4)]'
+                        : 'bg-[#14141c]/90 text-[#b0b0b8] border-white/10 hover:border-[#aa88ff]/60 hover:text-white'
+                    }`}
+                  >
+                    {tag}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Scrollable Cards Feed on Mobile */}
+            <div className="absolute top-[154px] sm:top-[168px] bottom-3 inset-x-3 sm:inset-x-6 overflow-y-auto pointer-events-auto z-20 space-y-3 pb-8 no-scrollbar max-w-[480px] mx-auto">
+              {filteredCards.map((card) => renderCard(card, true))}
+
+              {filteredCards.length === 0 && (
+                <div className="py-12 text-xs text-[#8a8a8a] font-mono text-center">
+                  TIDAK ADA DOKUMEN PADA KATEGORI [{activeTag}].
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* ============================================================ */}
+        {/* MOBILE VIEW: PROFIL & CV DOSSIER */}
+        {/* ============================================================ */}
+        {mobileTab === 'profile' && (
+          <div className="absolute top-[114px] sm:top-[126px] bottom-3 inset-x-3 sm:inset-x-6 overflow-y-auto pointer-events-auto z-20 pb-8 no-scrollbar lg:hidden max-w-[480px] mx-auto">
+            <div
+              className="p-5 sm:p-6 rounded-xl border border-white/15 bg-[#0a0a10]/90 backdrop-blur-xl text-[#dddddd] shadow-2xl"
+              style={{
+                boxShadow:
+                  '0 20px 50px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.1)',
+              }}
+            >
+              {renderProfileDossier(true)}
+            </div>
+          </div>
+        )}
+
+        {/* ============================================================ */}
+        {/* DESKTOP VIEW: LEFT COLUMN (TAGS & CARDS LIST) */}
+        {/* Visible only on lg: screens (>= 1024px) */}
+        {/* ============================================================ */}
+        <div className="hidden lg:flex tags absolute top-[100px] left-[24px] w-[350px] flex-wrap gap-[6px] pointer-events-auto z-20">
           {TAGS.map((tag) => {
             const isActive = activeTag === tag;
             return (
@@ -472,59 +744,10 @@ export default function AxonUI({
           })}
         </div>
 
-        {/* LEFT COLUMN: VERIFIED DOCUMENTS & PROJECTS LIST */}
         <div
-          className="list absolute top-[205px] left-[24px] bottom-[20px] w-[340px] overflow-y-auto pointer-events-auto pr-2 z-20 space-y-3"
-          style={{
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-          }}
+          className="hidden lg:block list absolute top-[205px] left-[24px] bottom-[20px] w-[340px] overflow-y-auto pointer-events-auto pr-2 z-20 space-y-3 no-scrollbar"
         >
-          {filteredCards.map((card) => {
-            const isHovered = hoveredCardId === card.id;
-
-            return (
-              <div
-                key={card.id}
-                onClick={() => setSelectedCard(card)}
-                onMouseEnter={() => setHoveredCardId(card.id)}
-                onMouseLeave={() => setHoveredCardId(null)}
-                className="group p-2.5 rounded-lg border border-white/10 bg-[#0c0c12]/80 backdrop-blur-md cursor-pointer transition-all duration-300 hover:border-[#aa88ff]/70 hover:shadow-[0_8px_30px_rgba(170,136,255,0.18)] hover:-translate-y-0.5"
-              >
-                {/* Thumbnail Image Container */}
-                <div className="relative h-[155px] rounded overflow-hidden bg-black/60 border border-white/10">
-                  <img
-                    src={card.img}
-                    alt={card.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  {/* Subtle Gradient Shadow */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none" />
-
-                  {/* Top-Right Action Pill */}
-                  <div className="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-black/75 backdrop-blur border border-white/10 text-[9px] text-[#aa88ff] opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 font-mono">
-                    <ArrowUpRight size={11} />
-                    <span>INSPECT</span>
-                  </div>
-
-                  {/* Bottom-Left Category Tag */}
-                  <div className="absolute bottom-2 left-2 px-1.5 py-0.5 rounded bg-black/80 backdrop-blur border border-white/15 text-[8.5px] text-white/90 font-mono">
-                    {card.category}
-                  </div>
-                </div>
-
-                {/* Card Title & Meta Row */}
-                <div className="mt-2.5 flex items-start justify-between gap-2 text-[11px] font-mono leading-tight">
-                  <div className="text-white font-medium group-hover:text-[#aa88ff] transition-colors line-clamp-1">
-                    {card.title}
-                  </div>
-                  <div className="text-[#8a8a8a] text-right shrink-0 text-[10px]">
-                    VERIFIED
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          {filteredCards.map((card) => renderCard(card, false))}
 
           {filteredCards.length === 0 && (
             <div className="py-8 text-xs text-[#8a8a8a] font-mono text-center">
@@ -533,98 +756,18 @@ export default function AxonUI({
           )}
         </div>
 
-        {/* RIGHT COLUMN: REZA FAHMI PROFILE & WORK DOSSIER */}
+        {/* ============================================================ */}
+        {/* DESKTOP VIEW: RIGHT COLUMN (PROFILE DOSSIER) */}
+        {/* Visible only on lg: screens (>= 1024px) */}
+        {/* ============================================================ */}
         <div
-          className="about absolute right-[40px] top-1/2 -translate-y-1/2 w-[390px] pointer-events-auto z-20 p-6 rounded-xl border border-white/15 bg-[#0a0a10]/85 backdrop-blur-xl shadow-2xl text-[#dddddd]"
+          className="hidden lg:block about absolute right-[40px] top-1/2 -translate-y-1/2 w-[390px] pointer-events-auto z-20 p-6 rounded-xl border border-white/15 bg-[#0a0a10]/85 backdrop-blur-xl shadow-2xl text-[#dddddd]"
           style={{
-            boxShadow: '0 20px 50px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.1)',
+            boxShadow:
+              '0 20px 50px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.1)',
           }}
         >
-          <div className="space-y-4">
-            {/* Section 1: Profile & Bio */}
-            <div>
-              <div className="flex items-center justify-between mb-1.5">
-                <span className="text-[11px] text-[#aa88ff] font-semibold tracking-wider flex items-center gap-1.5">
-                  <Sparkles size={12} />
-                  <span>[PROFILE // REZA FAHMI]</span>
-                </span>
-                <button
-                  onClick={() => setIsProfileModalOpen(true)}
-                  className="text-[9.5px] text-[#aaaaaa] underline hover:text-white transition-colors cursor-pointer"
-                >
-                  FULL DOSSIER
-                </button>
-              </div>
-              <p className="text-[11.5px] text-[#cccccc] leading-relaxed">
-                {PORTFOLIO_DATA.profile.bio}
-              </p>
-            </div>
-
-            {/* Section 2: Experience & Certifications Track */}
-            <div className="pt-2 border-t border-white/10">
-              <span className="text-[11px] text-[#aa88ff] font-semibold tracking-wider flex items-center gap-1.5 mb-1.5">
-                <Award size={12} />
-                <span>[EXPERIENCE & CREDENTIALS]</span>
-              </span>
-              <ul className="space-y-1 text-[11px] text-[#bbbbbb] leading-normal">
-                <li>• IBM SkillsBuild — AI Agents & Data (2026)</li>
-                <li>• Dicoding x AWS — Back-End & Cloud Gen AI (2025)</li>
-                <li>• IBM SkillsBuild x Hacktiv8 — IBM Granite (2025)</li>
-                <li>• Dicoding Academy — AI & JavaScript (2025)</li>
-              </ul>
-            </div>
-
-            {/* Section 3: Core Technical Capabilities */}
-            <div className="pt-2 border-t border-white/10">
-              <span className="text-[11px] text-[#aa88ff] font-semibold tracking-wider flex items-center gap-1.5 mb-1.5">
-                <Code size={12} />
-                <span>[CORE CAPABILITIES]</span>
-              </span>
-              <div className="flex flex-wrap gap-1.5">
-                {PORTFOLIO_DATA.capabilities.slice(0, 7).map((cap, idx) => (
-                  <span
-                    key={idx}
-                    className="px-2 py-0.5 rounded text-[9.5px] bg-[#14141e] border border-white/10 text-[#dddddd]"
-                  >
-                    {cap}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Section 4: Action Links & Contact */}
-            <div className="pt-2 border-t border-white/10 space-y-1.5 text-[11px]">
-              <a
-                href="/cv.pdf"
-                download="CV_Reza_Fahmi_Alkhamdani.pdf"
-                className="flex items-center justify-between p-2 rounded bg-[#aa88ff] text-black font-bold hover:bg-white transition-colors"
-              >
-                <span>DOWNLOAD CV (.PDF)</span>
-                <FileDown size={13} />
-              </a>
-
-              <div className="grid grid-cols-2 gap-2 pt-1 text-[10.5px]">
-                <a
-                  href={PORTFOLIO_DATA.profile.socials.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 p-1.5 rounded border border-white/10 bg-[#12121a] hover:border-[#aa88ff] transition-colors text-white"
-                >
-                  <Github size={12} />
-                  <span>GITHUB</span>
-                </a>
-                <a
-                  href={PORTFOLIO_DATA.profile.socials.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 p-1.5 rounded border border-white/10 bg-[#12121a] hover:border-[#aa88ff] transition-colors text-white"
-                >
-                  <Linkedin size={12} />
-                  <span>LINKEDIN</span>
-                </a>
-              </div>
-            </div>
-          </div>
+          {renderProfileDossier(false)}
         </div>
       </div>
 

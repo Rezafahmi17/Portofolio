@@ -41,30 +41,13 @@ html, body {
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-/* AXON Responsive Breakpoints */
-@media (max-width: 1100px) {
-  .ui .about {
-    right: 24px !important;
-    width: 320px !important;
-  }
+/* AXON Utility Styles */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-
-@media (max-width: 760px) {
-  .ui .list,
-  .ui .tags {
-    display: none !important;
-  }
-  .ui .about {
-    left: 24px !important;
-    right: 24px !important;
-    bottom: 24px !important;
-    top: auto !important;
-    transform: none !important;
-    width: auto !important;
-  }
-  .ui .about p {
-    text-align: left !important;
-  }
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Optimasi untuk touch events di mobile */
