@@ -5,24 +5,66 @@
 :root {
   --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'Space Grotesk', Menlo, Monaco, Consolas, monospace;
+  --font-mono: "SF Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
+
+  /* AXON tokens */
+  --accent: #aa88ff;
+  --text: #dddddd;
+  --muted: #8a8a8a;
+  --chip: #1c1c1c;
+  --line: #2a2a2a;
 }
 
-body {
-  font-family: var(--font-sans);
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #000000;
+  color: var(--text);
+  font-family: var(--font-mono);
   margin: 0;
-  line-height: 1.55;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "ss01" 1, "cv11" 1;
   -webkit-overflow-scrolling: touch;
   -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
 }
 
-html {
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: none;
+/* AXON Glossy Glass Panels */
+.glass-panel {
+  background: rgba(14, 14, 18, 0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* AXON Responsive Breakpoints */
+@media (max-width: 1100px) {
+  .ui .about {
+    right: 24px !important;
+    width: 320px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .ui .list,
+  .ui .tags {
+    display: none !important;
+  }
+  .ui .about {
+    left: 24px !important;
+    right: 24px !important;
+    bottom: 24px !important;
+    top: auto !important;
+    transform: none !important;
+    width: auto !important;
+  }
+  .ui .about p {
+    text-align: left !important;
+  }
 }
 
 /* Optimasi untuk touch events di mobile */
