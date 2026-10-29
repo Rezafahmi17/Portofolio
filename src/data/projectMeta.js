@@ -1,6 +1,38 @@
 export const PROJECT_META = [
   {
+    id: 0,
+    slug: "kopi-nusantara",
+    title: "Kopi Nusantara — QR Ordering & Tracking",
+    category: "Featured Web Project",
+    color: "bg-purple-500",
+    img: "/hackathon-base/base-realms-1.webp",
+  },
+  {
     id: 1,
+    slug: "portfolio-website-smanrp",
+    title: "Website Sekolah SMA N 1 Rajabasa Permai Plus",
+    category: "Featured Web Project",
+    color: "bg-lime-500",
+    img: "/hackathon-base/sman1-portfolio.png",
+  },
+  {
+    id: 2,
+    slug: "sim-ormawa-hmj",
+    title: "SIM ORMAWA & HMJ — Multi-Tenant",
+    category: "Featured Web Project",
+    color: "bg-sky-500",
+    img: "/hackathon-base/sim-ormawa-multitenant.svg",
+  },
+  {
+    id: 3,
+    slug: "hermes-ai-telegram-whatsapp",
+    title: "Hermes AI Agent (Telegram/WhatsApp)",
+    category: "xcode.or.id Certificate",
+    color: "bg-emerald-500",
+    img: "/certificates/hermes-ai-xcode.svg",
+  },
+  {
+    id: 4,
     slug: "backend-js-dicoding",
     title: "Back-End JavaScript",
     category: "Dicoding Certificate",
@@ -8,7 +40,7 @@ export const PROJECT_META = [
     img: "/certificates/backend-js-dicoding.webp",
   },
   {
-    id: 2,
+    id: 5,
     slug: "javascript-dicoding",
     title: "Dasar JavaScript",
     category: "Dicoding Certificate",
@@ -16,7 +48,7 @@ export const PROJECT_META = [
     img: "/certificates/javascript-dicoding.webp",
   },
   {
-    id: 3,
+    id: 6,
     slug: "dasar-ai-dicoding",
     title: "Dasar AI",
     category: "Dicoding Certificate",
@@ -24,7 +56,7 @@ export const PROJECT_META = [
     img: "/certificates/dasar-ai-dicoding.webp",
   },
   {
-    id: 4,
+    id: 7,
     slug: "cloud-genai-aws-dicoding",
     title: "Cloud & Gen AI AWS",
     category: "Dicoding Certificate",
@@ -32,7 +64,7 @@ export const PROJECT_META = [
     img: "/certificates/cloud-genai-aws-dicoding.webp",
   },
   {
-    id: 5,
+    id: 8,
     slug: "ibm-granite-credly",
     title: "IBM Granite Data",
     category: "IBM SkillsBuild",
@@ -40,7 +72,7 @@ export const PROJECT_META = [
     img: "/certificates/ibm-granite-credly.webp",
   },
   {
-    id: 6,
+    id: 9,
     slug: "skillsbuild-data-classification-summarization",
     title: "IBM Granite Summary",
     category: "IBM SkillsBuild",
@@ -48,7 +80,7 @@ export const PROJECT_META = [
     img: "/certificates/skillsbuild-data-classification-summarization.webp",
   },
   {
-    id: 7,
+    id: 10,
     slug: "hacktiv8-data-classification-summarization",
     title: "Data Classification",
     category: "Hacktiv8 x IBM",
@@ -56,7 +88,7 @@ export const PROJECT_META = [
     img: "/certificates/hacktiv8-data-classification-summarization.webp",
   },
   {
-    id: 8,
+    id: 11,
     slug: "skillsbuild-classifying-data",
     title: "Classifying Data",
     category: "IBM SkillsBuild",
@@ -64,7 +96,7 @@ export const PROJECT_META = [
     img: "/certificates/skillsbuild-classifying-data.webp",
   },
   {
-    id: 9,
+    id: 12,
     slug: "skillsbuild-summarizing-data",
     title: "Summarizing Data",
     category: "IBM SkillsBuild",
@@ -72,23 +104,23 @@ export const PROJECT_META = [
     img: "/certificates/skillsbuild-summarizing-data.webp",
   },
   {
-    id: 10,
+    id: 13,
     slug: "ukm-al-banna-peserta",
-    title: "Peserta UKM Al Banna",
+    title: "Kepemimpinan & Kemahasiswaan Polinela",
     category: "Achievement Certificate",
     color: "bg-sky-400",
     img: "/certificates/ukm-al-banna-peserta.webp",
   },
   {
-    id: 11,
+    id: 14,
     slug: "futsal-juara-1",
-    title: "Juara 1 Futsal",
+    title: "4x Prestasi Juara Turnamen Futsal",
     category: "Achievement Certificate",
     color: "bg-violet-400",
     img: "/certificates/futsal-juara-1.webp",
   },
   {
-    id: 12,
+    id: 15,
     slug: "skillsbuild-classifying-data-2026",
     title: "Classifying Data (IBM Granite)",
     category: "IBM SkillsBuild",
@@ -96,7 +128,7 @@ export const PROJECT_META = [
     img: "/certificates/skillsbuild-classifying-data-2026.webp",
   },
   {
-    id: 13,
+    id: 16,
     slug: "skillsbuild-getting-started-data",
     title: "Getting Started with Data",
     category: "IBM SkillsBuild",
@@ -104,7 +136,7 @@ export const PROJECT_META = [
     img: "/certificates/skillsbuild-getting-started-data.webp",
   },
   {
-    id: 14,
+    id: 17,
     slug: "skillsbuild-ai-agents",
     title: "Unleashing the Power of AI Agents",
     category: "IBM SkillsBuild",
@@ -112,20 +144,12 @@ export const PROJECT_META = [
     img: "/certificates/skillsbuild-ai-agents.webp",
   },
   {
-    id: 15,
+    id: 18,
     slug: "skillsbuild-getting-started-data-credly",
     title: "Getting Started with Data (Credly)",
     category: "IBM SkillsBuild",
     color: "bg-teal-500",
     img: "/certificates/skillsbuild-getting-started-data-credly.webp",
-  },
-  {
-    id: 16,
-    slug: "portfolio-website-smanrp",
-    title: "Portfolio Website SMAN 1 Rajabasa",
-    category: "Featured Web Project",
-    color: "bg-lime-500",
-    img: "/hackathon-base/sman1-portfolio.png",
   },
 ];
 
