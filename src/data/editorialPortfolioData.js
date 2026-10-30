@@ -17,7 +17,7 @@ export const EDITORIAL_PROFILE = {
   heroHeadlineTop: "YOUR PRODUCT'S",
   heroHeadlineBottom: 'BACKSTAGE PASS',
   heroSubheadline:
-    'Mahasiswa Manajemen Informatika Politeknik Negeri Lampung yang merancang aplikasi web full-stack (Frontend, Backend, Multi-Database), sistem Multi-Tenant, serta solusi AI Agent otomatis.',
+    'Mahasiswa Manajemen Informatika Politeknik Negeri Lampung yang merancang aplikasi web full-stack (Next.js, React, Tailwind, Node.js, Multi-Database), sistem Multi-Tenant & POS Commerce, serta solusi AI Agent otomatis.',
   locationBadge: 'BANDAR MATARAM · LAMPUNG',
   location: 'Bandar Mataram, Lampung Tengah, Lampung',
   institution: 'Politeknik Negeri Lampung',
@@ -66,7 +66,7 @@ export const HERO_STICKERS = [
   {
     id: 'sticker-verified',
     type: 'pill-stamp',
-    label: '19+ VERIFIED WORKS & CERTS ★ IBM · AWS · DICODING · XCODE',
+    label: '20+ VERIFIED WORKS & CERTS ★ IBM · AWS · DICODING · XCODE',
     bg: '#F6F5F0',
     fg: '#121212',
     accent: '#FF3B00',
@@ -144,12 +144,80 @@ export const BACKSTAGE_INSTRUMENTS = [
   },
 ];
 
-// 6 Curated Flagship Case Studies (All 3 Real CV Web Projects + 3 Verified AI/Cloud Specializations)
+// 7 Curated Flagship Case Studies (All 4 Real Web Projects + 3 Verified AI/Cloud Specializations)
 export const SELECTED_WORKS = [
   {
     id: 'work-01',
     number: '01',
-    total: '06',
+    total: '07',
+    slug: 'kasirin',
+    title: 'Kasirin — Aplikasi Kasir & Multi-Tenant Commerce',
+    shortTitle: 'KASIRIN COMMERCE',
+    ticketTitle: 'KASIRIN POS',
+    category: 'Multi-Tenant POS & Commerce',
+    creativeField: 'Full-Stack Commerce & Multi-Tenant POS',
+    year: '2026',
+    duration: '2026 · Production Live',
+    client: 'Kasirin (TokoHub) · Multi-Tenant Commerce',
+    role: 'Full-Stack Web Developer',
+    deliverables: [
+      'Multi-Tenant Store Management',
+      'Kasir POS Penjualan & Penyewaan',
+      'Etalase Customer & Struk Digital',
+      'Laporan Keuangan & Insight Real-Time',
+    ],
+    toolBadges: ['POS', 'MT'],
+    ticketBg: '#FF4D00',
+    ticketFg: '#121212',
+    ticketTextLight: false,
+    gridMode: 'left-7',
+    heroImg: '/hackathon-base/kasirin-dashboard.png',
+    galleryImgs: [
+      {
+        src: '/hackathon-base/kasirin-dashboard.png',
+        caption: 'Dashboard utama Kasirin: Satu tempat untuk kasir POS, sewa, dan manajemen multi-tenant toko.',
+      },
+    ],
+    tagline:
+      'Platform Multi-Tenant Commerce dan Kasir POS modern yang menyatukan etalase customer, transaksi jual-beli & rental, stok, struk digital, hingga laporan keuangan real-time.',
+    challenge:
+      'Banyak pemilik toko dan UMKM kesulitan mengelola transaksi penjualan langsung, penyewaan barang (rental), pencatatan stok simultan, dan pembukuan dalam satu aplikasi yang terisolasi aman antar-toko tanpa biaya infrastruktur yang mahal.',
+    solution:
+      'Membangun platform Kasirin berbasis Next.js, React, Tailwind CSS, Node.js, Express.js, dan PostgreSQL dengan arsitektur Multi-Tenant yang mengisolasi data toko, mode kasir POS terpisah untuk penjualan dan penyewaan, pencegahan stok negatif dengan row-level lock database, pencetakan struk digital, serta analitik omzet real-time.',
+    features: [
+      'Arsitektur Multi-Tenant: Setiap toko memiliki data mandiri, terisolasi, dan aman antar-tenant.',
+      'Kasir POS Penjualan & Penyewaan: Mendukung transaksi langsung produk serta durasi sewa fleksibel hingga 365 hari.',
+      'Pencegahan Stok Negatif: Menggunakan transaksi database berjenjang dan row locking pada checkout simultan.',
+      'Struk Digital & Pembayaran: Pencatatan otomatis transaksi tunai dan simulasi QRIS dengan struk kasir rapi.',
+      'Laporan & Insight Real-time: Grafik omzet, rekap transaksi, pengeluaran toko, serta fitur export laporan ke Excel.',
+      'Role-Based Access Control (RBAC): Hak akses terpisah dan aman untuk Super Admin, Admin Toko (Tenant), dan Kasir.',
+      'Live deployment di kasirin-toko.vercel.app dan repository GitHub publik di Rezafahmi17/kasirin.',
+    ],
+    impact: [
+      'Menyediakan solusi all-in-one bagi pelaku usaha retail dan persewaan barang untuk mengelola operasional secara efisien.',
+      'Mencegah kerugian inventaris berkat validasi ketat stok di sisi server saat transaksi penjualan maupun rental.',
+      'Membuktikan kapabilitas rekayasa software enterprise berskala multi-tenant dengan integrasi full-stack Next.js, Node.js, dan PostgreSQL.',
+    ],
+    stack: [
+      'Next.js',
+      'React',
+      'Tailwind CSS',
+      'Node.js',
+      'Express.js',
+      'PostgreSQL',
+      'JWT Auth',
+      'Multi-Tenant',
+      'Vercel',
+    ],
+    links: {
+      live: 'https://kasirin-toko.vercel.app/',
+      github: 'https://github.com/Rezafahmi17/kasirin',
+    },
+  },
+  {
+    id: 'work-02',
+    number: '02',
+    total: '07',
     slug: 'kopi-nusantara',
     title: 'Kopi Nusantara — QR Ordering & Tracking',
     shortTitle: 'KOPI NUSANTARA',
@@ -170,7 +238,7 @@ export const SELECTED_WORKS = [
     ticketBg: '#7348FF',
     ticketFg: '#121212',
     ticketTextLight: false,
-    gridMode: 'left-7',
+    gridMode: 'right-5',
     heroImg: '/hackathon-base/base-realms-1.webp',
     galleryImgs: [
       {
@@ -218,79 +286,9 @@ export const SELECTED_WORKS = [
     },
   },
   {
-    id: 'work-02',
-    number: '02',
-    total: '06',
-    slug: 'portfolio-website-smanrp',
-    title: 'SMA N 1 Rajabasa Permai Plus — Website Sekolah',
-    shortTitle: 'SMAN 1 RP PLUS',
-    ticketTitle: 'SMAN 1 RP PLUS',
-    category: 'School Portal & JWT CMS',
-    creativeField: 'Full-Stack Web & JWT Admin Dashboard',
-    year: '2026',
-    duration: 'Agus 2026 – Sep 2026',
-    client: 'SMA N 1 Rajabasa Permai Plus',
-    role: 'Full-Stack Web Developer',
-    deliverables: [
-      'Portal Halaman Publik Sekolah',
-      'JWT Authenticated Admin Login',
-      'Full CRUD Content Management',
-      'Galeri Interaktif & Statistik',
-    ],
-    toolBadges: ['JWT', 'FS'],
-    ticketBg: '#F4BE2A',
-    ticketFg: '#121212',
-    ticketTextLight: false,
-    gridMode: 'right-5',
-    heroImg: '/hackathon-base/sman1-portfolio.png',
-    galleryImgs: [
-      {
-        src: '/hackathon-base/sman1-portfolio.png',
-        caption: 'Halaman publik resmi SMA N 1 Rajabasa Permai Plus dengan statistik guru/siswa, berita, profil, ekstrakurikuler, dan galeri.',
-      },
-      {
-        src: '/certificates/javascript-dicoding.webp',
-        caption: 'Implementasi arsitektur JavaScript modern, REST API, dan autentikasi berbasis JSON Web Token (JWT).',
-      },
-    ],
-    tagline:
-      'Portal informasi resmi SMA N 1 Rajabasa Permai Plus yang dilengkapi Halaman Publik interaktif serta Dashboard Admin terautentikasi JWT untuk manajemen konten (CRUD) secara mandiri.',
-    challenge:
-      'Sekolah membutuhkan pusat informasi digital yang kredibel untuk menampilkan profil institusi, berita kegiatan, data statistik pendidik/siswa, serta ekstrakurikuler kepada masyarakat, sekaligus menyediakan dashboard aman bagi staf sekolah untuk memperbarui konten setiap saat.',
-    solution:
-      'Merancang aplikasi web sekolah dua sisi: Halaman Publik berdesain modern (Beranda, Profil Sekolah, Ekstrakurikuler, Galeri Foto Interaktif, Berita) serta Dashboard Admin dengan proteksi login JWT dan operasi CRUD penuh pada 5 modul utama.',
-    features: [
-      'Beranda publik dengan berita terbaru, statistik guru & siswa aktif, serta preview galeri kegiatan.',
-      'Halaman Profil Sekolah mencakup visi, misi, sejarah singkat, dan tabel informasi sekolah terakreditasi.',
-      'Halaman Ekstrakurikuler lengkap dengan daftar cabang dan detail per kegiatan siswa, serta Galeri Foto Interaktif.',
-      'Dashboard Admin dengan sistem login terautentikasi JSON Web Token (JWT).',
-      'Manajemen konten penuh (CRUD) untuk modul: Berita, Ekstrakurikuler, Galeri, Profil Sekolah, dan Statistik.',
-    ],
-    impact: [
-      'Mendigitalkan publikasi informasi resmi dan dokumentasi kegiatan SMA N 1 Rajabasa Permai Plus.',
-      'Memberikan kemandirian penuh kepada admin sekolah dalam memperbarui data tanpa perlu mengubah kode.',
-      'Menunjukkan penerapan keamanan autentikasi JWT dan arsitektur CRUD modular di lingkungan nyata.',
-    ],
-    stack: [
-      'React',
-      'Vite',
-      'Tailwind CSS',
-      'JavaScript',
-      'Node.js',
-      'Express',
-      'JWT Auth',
-      'MySQL / Supabase',
-      'Netlify',
-    ],
-    links: {
-      live: 'https://sma-n-1-rajabasa-permai-plus.netlify.app/',
-      github: 'https://github.com/Rezafahmi17/SMA-N-1-Rajabasa-Permai-Plus',
-    },
-  },
-  {
     id: 'work-03',
     number: '03',
-    total: '06',
+    total: '07',
     slug: 'sim-ormawa-hmj',
     title: 'SIM ORMAWA & HMJ — Multi-Tenant System',
     shortTitle: 'SIM MULTI-TENANT',
@@ -354,7 +352,77 @@ export const SELECTED_WORKS = [
   {
     id: 'work-04',
     number: '04',
-    total: '06',
+    total: '07',
+    slug: 'portfolio-website-smanrp',
+    title: 'SMA N 1 Rajabasa Permai Plus — Website Sekolah',
+    shortTitle: 'SMAN 1 RP PLUS',
+    ticketTitle: 'SMAN 1 RP PLUS',
+    category: 'School Portal & JWT CMS',
+    creativeField: 'Full-Stack Web & JWT Admin Dashboard',
+    year: '2026',
+    duration: 'Agus 2026 – Sep 2026',
+    client: 'SMA N 1 Rajabasa Permai Plus',
+    role: 'Full-Stack Web Developer',
+    deliverables: [
+      'Portal Halaman Publik Sekolah',
+      'JWT Authenticated Admin Login',
+      'Full CRUD Content Management',
+      'Galeri Interaktif & Statistik',
+    ],
+    toolBadges: ['JWT', 'FS'],
+    ticketBg: '#F4BE2A',
+    ticketFg: '#121212',
+    ticketTextLight: false,
+    gridMode: 'left-6',
+    heroImg: '/hackathon-base/sman1-portfolio.png',
+    galleryImgs: [
+      {
+        src: '/hackathon-base/sman1-portfolio.png',
+        caption: 'Halaman publik resmi SMA N 1 Rajabasa Permai Plus dengan statistik guru/siswa, berita, profil, ekstrakurikuler, dan galeri.',
+      },
+      {
+        src: '/certificates/javascript-dicoding.webp',
+        caption: 'Implementasi arsitektur JavaScript modern, REST API, dan autentikasi berbasis JSON Web Token (JWT).',
+      },
+    ],
+    tagline:
+      'Portal informasi resmi SMA N 1 Rajabasa Permai Plus yang dilengkapi Halaman Publik interaktif serta Dashboard Admin terautentikasi JWT untuk manajemen konten (CRUD) secara mandiri.',
+    challenge:
+      'Sekolah membutuhkan pusat informasi digital yang kredibel untuk menampilkan profil institusi, berita kegiatan, data statistik pendidik/siswa, serta ekstrakurikuler kepada masyarakat, sekaligus menyediakan dashboard aman bagi staf sekolah untuk memperbarui konten setiap saat.',
+    solution:
+      'Merancang aplikasi web sekolah dua sisi: Halaman Publik berdesain modern (Beranda, Profil Sekolah, Ekstrakurikuler, Galeri Foto Interaktif, Berita) serta Dashboard Admin dengan proteksi login JWT dan operasi CRUD penuh pada 5 modul utama.',
+    features: [
+      'Beranda publik dengan berita terbaru, statistik guru & siswa aktif, serta preview galeri kegiatan.',
+      'Halaman Profil Sekolah mencakup visi, misi, sejarah singkat, dan tabel informasi sekolah terakreditasi.',
+      'Halaman Ekstrakurikuler lengkap dengan daftar cabang dan detail per kegiatan siswa, serta Galeri Foto Interaktif.',
+      'Dashboard Admin dengan sistem login terautentikasi JSON Web Token (JWT).',
+      'Manajemen konten penuh (CRUD) untuk modul: Berita, Ekstrakurikuler, Galeri, Profil Sekolah, dan Statistik.',
+    ],
+    impact: [
+      'Mendigitalkan publikasi informasi resmi dan dokumentasi kegiatan SMA N 1 Rajabasa Permai Plus.',
+      'Memberikan kemandirian penuh kepada admin sekolah dalam memperbarui data tanpa perlu mengubah kode.',
+      'Menunjukkan penerapan keamanan autentikasi JWT dan arsitektur CRUD modular di lingkungan nyata.',
+    ],
+    stack: [
+      'React',
+      'Vite',
+      'Tailwind CSS',
+      'JavaScript',
+      'Node.js',
+      'Express',
+      'JWT Auth',
+      'MySQL / Supabase',
+      'Netlify',
+    ],
+    links: {
+      live: 'https://sma-n-1-rajabasa-permai-plus.netlify.app/',
+      github: 'https://github.com/Rezafahmi17/SMA-N-1-Rajabasa-Permai-Plus',
+    },
+  },
+  {
+    id: 'work-05',
+    number: '05',
+    total: '07',
     slug: 'skillsbuild-ai-agents',
     title: 'AI Agents & Hermes Telegram/WhatsApp Bot',
     shortTitle: 'AI & HERMES BOT',
@@ -374,7 +442,7 @@ export const SELECTED_WORKS = [
     ticketBg: '#49A942',
     ticketFg: '#121212',
     ticketTextLight: false,
-    gridMode: 'left-6',
+    gridMode: 'right-6',
     heroImg: '/certificates/skillsbuild-ai-agents.webp',
     galleryImgs: [
       {
@@ -414,9 +482,9 @@ export const SELECTED_WORKS = [
     links: {},
   },
   {
-    id: 'work-05',
-    number: '05',
-    total: '06',
+    id: 'work-06',
+    number: '06',
+    total: '07',
     slug: 'backend-js-dicoding',
     title: 'Back-End Node.js/Express & AWS Cloud',
     shortTitle: 'BACKEND & AWS',
@@ -432,7 +500,7 @@ export const SELECTED_WORKS = [
     ticketBg: '#FF5416',
     ticketFg: '#121212',
     ticketTextLight: false,
-    gridMode: 'right-6',
+    gridMode: 'left-6',
     heroImg: '/certificates/backend-js-dicoding.webp',
     galleryImgs: [
       {
@@ -465,9 +533,9 @@ export const SELECTED_WORKS = [
     links: {},
   },
   {
-    id: 'work-06',
-    number: '06',
-    total: '06',
+    id: 'work-07',
+    number: '07',
+    total: '07',
     slug: 'ibm-granite-credly',
     title: 'IBM Granite Data Intelligence',
     shortTitle: 'IBM GRANITE AI',
@@ -657,6 +725,7 @@ export const STACK_MATRIX = [
       'CSS3',
       'JavaScript (ES6+)',
       'React',
+      'Next.js',
       'Vite',
       'Tailwind CSS',
       'PHP',
@@ -678,6 +747,7 @@ export const STACK_MATRIX = [
   {
     category: 'DATABASE SYSTEMS',
     items: [
+      'PostgreSQL',
       'MySQL',
       'SQL Server',
       'Supabase',
@@ -695,13 +765,24 @@ export const STACK_MATRIX = [
       'AWS Cloud & EC2',
       'Git & GitHub',
       'Postman',
+      'Vercel',
       'Netlify',
     ],
   },
 ];
 
-// Complete Playground / Archive Vault (19 Verified Projects, Certificates & Achievements)
+// Complete Playground / Archive Vault (20 Verified Projects, Certificates & Achievements)
 export const PLAYGROUND_ARCHIVE = [
+  {
+    slug: 'kasirin',
+    title: 'Kasirin — Aplikasi Kasir & Multi-Tenant Commerce',
+    category: 'WEB APPS',
+    issuer: 'Multi-Tenant POS & Commerce',
+    year: '2026',
+    img: '/hackathon-base/kasirin-dashboard.png',
+    accent: '#FF4D00',
+    code: 'WEB-00',
+  },
   {
     slug: 'kopi-nusantara',
     title: 'Kopi Nusantara — QR Ordering & Tracking',

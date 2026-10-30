@@ -2,6 +2,48 @@
 // Synchronized 100% with Reza Fahmi Alkhamdani's CV & verified documentation.
 
 export const PROJECT_DETAILS_DATA = {
+  "kasirin": {
+    title: "Kasirin — Aplikasi Kasir & Multi-Tenant Commerce",
+    category: "Multi-Tenant POS & Commerce Platform",
+    heroImg: "/hackathon-base/kasirin-dashboard.png",
+    tagline:
+      "Satu tempat untuk kasir POS, sewa, dan manajemen toko. Menyatukan kasir POS, etalase customer, transaksi, stok, pembayaran, struk digital, laporan keuangan dan dashboard tenant.",
+    year: "2026",
+    kicker: "Flagship Commerce Platform",
+    featuresTitle: "Arsitektur & Fitur Utama Kasirin",
+    impactTitle: "Business & Engineering Impact",
+    stackTitle: "Tech Stack",
+    stack: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "JWT Auth",
+      "Multi-Tenant",
+      "Vercel",
+    ],
+    features: [
+      "Multi-Tenant Architecture — Setiap toko/tenant memiliki isolasi data mandiri dan aman antar-tenant.",
+      "Dual Mode Kasir POS — Mendukung transaksi penjualan barang langsung dan penyewaan barang (rental) dengan durasi fleksibel hingga 365 hari.",
+      "Stok & Database Safety — Menjamin integritas stok dengan pencegahan stok minus menggunakan row-level lock transaksi database.",
+      "Etalase Customer & Struk Digital — Pengalaman belanja modern dengan pencetakan struk kasir digital otomatis dan simulasi pembayaran QRIS/Tunai.",
+      "Laporan Real-Time & Export Excel — Dashboard analitik omzet, riwayat transaksi, grafik keuangan, serta fitur unduh laporan ke format Excel.",
+      "Multi-Role Permission (RBAC) — Hak akses hierarkis untuk Super Admin (platform), Admin Toko (tenant), dan Kasir.",
+      "Akses publik live di kasirin-toko.vercel.app dan source code di github.com/Rezafahmi17/kasirin.",
+    ],
+    impact: [
+      "Memberikan solusi digital lengkap bagi toko ritel dan bisnis rental untuk mengelola operasional harian secara cepat dan terorganisir.",
+      "Mengurangi selisih stok dan risiko inventaris melalui mekanisme row locking pada transaksi kasir konkuren.",
+      "Membuktikan keahlian rekayasa full-stack tingkat lanjut dengan arsitektur multi-tenant berbasis Next.js dan PostgreSQL.",
+    ],
+    links: {
+      live: "https://kasirin-toko.vercel.app/",
+      repo: "https://github.com/Rezafahmi17/kasirin",
+      github: "https://github.com/Rezafahmi17/kasirin",
+    },
+  },
   "kopi-nusantara": {
     title: "Kopi Nusantara — QR Ordering & Tracking",
     category: "UMKM Full-Stack Web Project",

@@ -65,26 +65,29 @@ export default function EditorialShowcase({ onSelectWork }) {
     };
   }, [viewMode]);
 
-  // Stacked 6-Ticket Deck Fan Transforms (Screenshot 3 Reference)
+  // Stacked 7-Ticket Deck Fan Transforms (Screenshot 3 Reference)
   const fanTransforms = [
     deckFanned
-      ? 'translate(-155px, -42px) rotate(-15deg)'
-      : 'translate(-72px, -34px) rotate(-10deg)',
+      ? 'translate(-180px, -48px) rotate(-18deg)'
+      : 'translate(-84px, -36px) rotate(-12deg)',
     deckFanned
-      ? 'translate(-94px, -16px) rotate(-9deg)'
-      : 'translate(-44px, -14px) rotate(-5deg)',
+      ? 'translate(-120px, -24px) rotate(-12deg)'
+      : 'translate(-56px, -18px) rotate(-8deg)',
     deckFanned
-      ? 'translate(-30px, 8px) rotate(-3deg)'
-      : 'translate(-14px, 6px) rotate(-2deg)',
+      ? 'translate(-60px, -4px) rotate(-6deg)'
+      : 'translate(-28px, -4px) rotate(-4deg)',
     deckFanned
-      ? 'translate(34px, -4px) rotate(4deg)'
-      : 'translate(18px, 2px) rotate(3deg)',
+      ? 'translate(0px, 8px) rotate(0deg)'
+      : 'translate(0px, 4px) rotate(0deg)',
     deckFanned
-      ? 'translate(96px, 12px) rotate(10deg)'
-      : 'translate(46px, 14px) rotate(7deg)',
+      ? 'translate(60px, -4px) rotate(6deg)'
+      : 'translate(28px, -4px) rotate(4deg)',
     deckFanned
-      ? 'translate(154px, 30px) rotate(15deg)'
-      : 'translate(74px, 28px) rotate(11deg)',
+      ? 'translate(120px, 12px) rotate(12deg)'
+      : 'translate(56px, 16px) rotate(8deg)',
+    deckFanned
+      ? 'translate(180px, 32px) rotate(18deg)'
+      : 'translate(84px, 28px) rotate(12deg)',
   ];
 
   return (
@@ -257,40 +260,24 @@ export default function EditorialShowcase({ onSelectWork }) {
         </div>
 
         {/* ===================================================================== */}
-        {/* MODE A: PERFORATED CONCERT TICKET STAGE (Balanced 2x3 Ticket Rack)     */}
+        {/* MODE A: PERFORATED CONCERT TICKET STAGE (Balanced Responsive Grid)     */}
         {/* ===================================================================== */}
         {viewMode === 'tickets' && (
-          <div className="space-y-12 animate-view-enter">
-            {/* Primary 3-Ticket Row: All 3 Real Production Web Apps from CV */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 items-start pt-2">
-              {SELECTED_WORKS.slice(0, 3).map((work, idx) => {
-                const tiltClass =
-                  idx === 0
-                    ? 'md:-rotate-1'
-                    : idx === 1
-                    ? 'md:-rotate-2 md:-translate-y-2'
-                    : 'md:rotate-2';
+          <div className="animate-view-enter">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 items-start pt-2">
+              {SELECTED_WORKS.map((work, idx) => {
+                const tilts = [
+                  'lg:-rotate-1',
+                  'lg:-rotate-2 lg:-translate-y-2',
+                  'lg:rotate-2',
+                  'lg:rotate-1',
+                  'lg:-rotate-1 lg:translate-y-1',
+                  'lg:-rotate-2',
+                  'lg:rotate-2 lg:translate-y-1',
+                ];
+                const tiltClass = tilts[idx % tilts.length];
                 return (
-                  <RevealOnScroll key={work.id} delay={idx * 80}>
-                    <div className={`transition-transform ${tiltClass}`}>
-                      <PerforatedTicketCard work={work} onClick={onSelectWork} />
-                    </div>
-                  </RevealOnScroll>
-                );
-              })}
-            </div>
-
-            {/* Secondary 3-Ticket Row: AI Agents/Hermes, Backend/AWS, & IBM Granite */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 items-start pt-2">
-              {SELECTED_WORKS.slice(3, 6).map((work, idx) => {
-                const tiltClass =
-                  idx === 0
-                    ? 'md:rotate-1'
-                    : idx === 1
-                    ? 'md:-rotate-1 md:translate-y-1'
-                    : 'md:-rotate-2';
-                return (
-                  <RevealOnScroll key={work.id} delay={idx * 90}>
+                  <RevealOnScroll key={work.id} delay={(idx % 3) * 80}>
                     <div className={`transition-transform ${tiltClass}`}>
                       <PerforatedTicketCard work={work} onClick={onSelectWork} />
                     </div>
@@ -453,15 +440,15 @@ export default function EditorialShowcase({ onSelectWork }) {
               </div>
             </div>
 
-            {/* Projects 04, 05 & 06: Editorial Credential Trio */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-              {SELECTED_WORKS.slice(3, 6).map((work, idx) => (
+            {/* Projects 04 to 07: Editorial Credential & Case Study Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-start">
+              {SELECTED_WORKS.slice(3).map((work, idx) => (
                 <div
                   key={work.id}
                   onClick={() => onSelectWork(work)}
                   data-cursor-label="OPEN CASE ↗"
                   className={`group cursor-pointer space-y-3 ${
-                    idx === 1 ? 'md:mt-8' : idx === 2 ? 'md:mt-16' : ''
+                    idx % 2 === 1 ? 'md:mt-6' : ''
                   }`}
                 >
                   <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-white border border-[#121212]/15 p-2 shadow-md">
@@ -478,7 +465,7 @@ export default function EditorialShowcase({ onSelectWork }) {
                     </span>
                     <span>{work.year}</span>
                   </div>
-                  <h3 className="font-sans text-xl sm:text-2xl font-bold text-[#121212] group-hover:text-[#FF3B00] transition-colors">
+                  <h3 className="font-sans text-lg sm:text-xl font-bold text-[#121212] group-hover:text-[#FF3B00] transition-colors leading-snug">
                     {work.title}
                   </h3>
                 </div>

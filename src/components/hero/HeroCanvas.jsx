@@ -245,7 +245,7 @@ export default function HeroCanvas({ onOpenQuickProject }) {
               >
                 <div className="px-3.5 py-2 rounded-xl bg-[#F6F5F0] border-2 border-[#121212] shadow-md flex items-center gap-2">
                   <span className="px-1.5 py-0.5 rounded bg-[#FF3B00] text-white font-mono text-[10px] font-bold">
-                    19×
+                    20×
                   </span>
                   <span className="font-mono text-[10.5px] font-bold uppercase tracking-wider text-[#121212]">
                     VERIFIED WORKS &amp; CERTS

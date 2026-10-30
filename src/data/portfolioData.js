@@ -16,6 +16,14 @@ export const PORTFOLIO_DATA = {
   },
   experience: [
     {
+      title: "Kasirin — Aplikasi Kasir & Multi-Tenant Commerce",
+      period: "2026",
+      description: [
+        "Membangun platform POS & Multi-Tenant Commerce modern dengan Next.js, React, Node.js, Express, dan PostgreSQL.",
+        "Fitur kasir penjualan & penyewaan (rental), isolasi toko multi-tenant, row-level locking stok aman, cetak struk digital, dan ekspor laporan keuangan.",
+      ],
+    },
+    {
       title: "Kepala Departemen Pembinaan — UKM Olahraga Politeknik Negeri Lampung",
       period: "Feb 2026 – Jan 2027",
       description: [
@@ -73,6 +81,7 @@ export const PORTFOLIO_DATA = {
     { name: "CSS", category: "Frontend" },
     { name: "JavaScript", category: "Frontend / Backend" },
     { name: "React", category: "Frontend" },
+    { name: "Next.js", category: "Full-Stack Web" },
     { name: "Vite", category: "Frontend" },
     { name: "Tailwind CSS", category: "Frontend" },
     { name: "PHP", category: "Frontend / Backend" },
@@ -81,6 +90,7 @@ export const PORTFOLIO_DATA = {
     { name: "JWT Authentication", category: "Backend Security" },
     { name: "Multi-Tenant Architecture", category: "System Design" },
     { name: "RESTful API", category: "Backend" },
+    { name: "PostgreSQL", category: "Database" },
     { name: "MySQL", category: "Database" },
     { name: "SQL Server", category: "Database" },
     { name: "Supabase", category: "Database" },
@@ -91,10 +101,18 @@ export const PORTFOLIO_DATA = {
     { name: "AWS Cloud & EC2", category: "Cloud" },
     { name: "GSAP Animations", category: "Frontend" },
     { name: "Postman", category: "API Testing" },
+    { name: "Vercel", category: "Deployment" },
     { name: "Netlify", category: "Deployment" },
     { name: "Git & GitHub", category: "Tools" },
   ],
   projects: [
+    {
+      slug: "kasirin",
+      title: "Kasirin — Aplikasi Kasir & Multi-Tenant Commerce",
+      category: "Featured Web Project",
+      description:
+        "Platform Kasir POS dan Multi-Tenant Commerce yang menyatukan etalase customer, transaksi jual & sewa, stok, struk digital, dan laporan omzet real-time.",
+    },
     {
       slug: "kopi-nusantara",
       title: "Kopi Nusantara — QR Ordering & Tracking",
@@ -155,13 +173,13 @@ export const PORTFOLIO_DATA = {
     },
   ],
   capabilities: [
-    "Frontend Web (HTML, CSS, JavaScript, React, Vite, Tailwind CSS, PHP)",
+    "Frontend & Full-Stack Web (Next.js, React, Vite, Tailwind CSS, HTML, CSS, PHP)",
     "Backend Development (Node.js, Express, RESTful API, JWT Auth)",
-    "Database Systems (MySQL, SQL Server, Supabase)",
-    "Multi-Tenant Web Application Architecture",
+    "Database Systems (PostgreSQL, MySQL, SQL Server, Supabase)",
+    "Multi-Tenant Architecture & POS Commerce Systems",
     "AI Agents & Hermes AI (Telegram/WhatsApp Integration)",
     "IBM Granite Data Classification & Summarization",
-    "AWS Cloud Basics & Netlify Deployment",
+    "AWS Cloud Basics, Vercel & Netlify Deployment",
     "Microsoft Office & Organizational Leadership",
   ],
 };

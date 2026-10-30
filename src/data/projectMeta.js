@@ -151,6 +151,14 @@ export const PROJECT_META = [
     color: "bg-teal-500",
     img: "/certificates/skillsbuild-getting-started-data-credly.webp",
   },
+  {
+    id: 19,
+    slug: "kasirin",
+    title: "Kasirin — Aplikasi Kasir & Multi-Tenant Commerce",
+    category: "Featured Web Project",
+    color: "bg-orange-500",
+    img: "/hackathon-base/kasirin-dashboard.png",
+  },
 ];
 
 export const PROJECT_META_BY_SLUG = PROJECT_META.reduce((accumulator, item) => {
