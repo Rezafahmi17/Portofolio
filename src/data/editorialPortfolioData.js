@@ -17,7 +17,7 @@ export const EDITORIAL_PROFILE = {
   heroHeadlineTop: "YOUR PRODUCT'S",
   heroHeadlineBottom: 'BACKSTAGE PASS',
   heroSubheadline:
-    'Mahasiswa Manajemen Informatika Politeknik Negeri Lampung yang merancang aplikasi web full-stack (Next.js, React, Tailwind, Node.js, Multi-Database), sistem Multi-Tenant & POS Commerce, serta solusi AI Agent otomatis.',
+    'Mahasiswa Manajemen Informatika Politeknik Negeri Lampung yang merancang aplikasi web full-stack (Next.js, TypeScript, React, Tailwind, Node.js, Prisma, Multi-Database), sistem Multi-Tenant & POS Commerce, serta solusi AI Agent otomatis.',
   locationBadge: 'BANDAR MATARAM · LAMPUNG',
   location: 'Bandar Mataram, Lampung Tengah, Lampung',
   institution: 'Politeknik Negeri Lampung',
@@ -36,17 +36,17 @@ export const EDITORIAL_PROFILE = {
     whatsapp: 'https://wa.me/6281278734115',
   },
   narrative: [
-    'Halo! Saya Reza Fahmi Alkhamdani, Mahasiswa Diploma III (D3) Manajemen Informatika di Politeknik Negeri Lampung dengan kombinasi pengalaman pengembangan web full-stack dan kepemimpinan organisasi. Saya terampil membangun antarmuka Frontend (HTML, CSS, JavaScript, React, Vite, Tailwind CSS, PHP), layanan Backend (Node.js, Express, JWT Auth), serta pengelolaan Database (MySQL, SQL Server, Supabase).',
-    'Selain merancang sistem produksi seperti pemesanan QR UMKM Kopi Nusantara, portal sekolah ber-dashboard JWT CRUD, dan Sistem Informasi Manajemen ORMAWA & HMJ berarsitektur Multi-Tenant, saya aktif mengeksplorasi AI Agent otomatis (Hermes AI Telegram/WhatsApp, IBM Granite, AWS Cloud) serta memimpin sebagai Kepala Departemen Pembinaan UKM Olahraga Polinela & Ketua Pelaksana DIREKTUR CUP Se-Lampung.',
+    'Halo! Saya Reza Fahmi Alkhamdani, Mahasiswa Diploma III (D3) Manajemen Informatika di Politeknik Negeri Lampung dengan kombinasi pengalaman pengembangan web full-stack dan kepemimpinan organisasi. Saya terampil membangun antarmuka Frontend (Next.js, TypeScript, React, Vite, Tailwind CSS, HTML, CSS, PHP), layanan Backend (Node.js, Express, Prisma ORM, JWT Auth), serta pengelolaan Database (PostgreSQL, MySQL, SQL Server, Supabase).',
+    'Selain merancang portal produksi seperti SIM ORMAWA, HMJ & HIMA Politeknik Negeri Lampung berarsitektur Multi-Tenant dengan Audit Log SHA-256, platform POS & Multi-Tenant Commerce Kasirin, pemesanan QR UMKM Kopi Nusantara, dan portal sekolah ber-dashboard JWT CRUD, saya aktif mengeksplorasi AI Agent otomatis (Hermes AI Telegram/WhatsApp, IBM Granite, AWS Cloud) serta memimpin sebagai Kepala Departemen Pembinaan UKM Olahraga Polinela & Ketua Pelaksana DIREKTUR CUP Se-Lampung.',
   ],
 };
 
 export const TOP_MARQUEE_TAGS = [
-  '[HTML · CSS · JS · PHP]',
-  '[React + Vite + Tailwind]',
-  '[Node.js & Express]',
-  '[MySQL · SQL Server · Supabase]',
-  '[Multi-Tenant & JWT Auth]',
+  '[Next.js · TypeScript · React]',
+  '[Tailwind · Vite · PHP]',
+  '[Node.js · Express · Prisma]',
+  '[PostgreSQL · MySQL · Supabase]',
+  '[Multi-Tenant & SHA-256 Audit]',
   '[AI Agents & Hermes Bot]',
   '[IBM Granite & AWS Cloud]',
   '[Microsoft Office & Teamwork]',
@@ -150,6 +150,82 @@ export const SELECTED_WORKS = [
     id: 'work-01',
     number: '01',
     total: '07',
+    slug: 'sim-ormawa-hmj',
+    title: 'SIM ORMAWA, HMJ & HIMA — Politeknik Negeri Lampung',
+    shortTitle: 'SIM ORMAWA POLINELA',
+    ticketTitle: 'SIM ORMAWA & HMJ',
+    category: 'Multi-Tenant Campus Portal',
+    creativeField: 'Multi-Tenant MIS, RBAC & SHA-256 Audit',
+    year: '2026',
+    duration: '2026 · Production Live',
+    client: 'Kemahasiswaan Politeknik Negeri Lampung (8 Jurusan · 43 Prodi)',
+    role: 'Full-Stack Systems Developer',
+    deliverables: [
+      'Isolasi Data Multi-Tenant (ORMAWA, HMJ & HIMA)',
+      'Workflow Review Proker, Proposal & LPJ',
+      'Manajemen Anggaran Keuangan & Inventaris',
+      'Audit Log SHA-256 & Dokumen PDF Tervalidasi',
+    ],
+    toolBadges: ['MT', 'TS'],
+    ticketBg: '#10B981',
+    ticketFg: '#121212',
+    ticketTextLight: false,
+    gridMode: 'left-7',
+    heroImg: '/hackathon-base/sim-ormawa-polinela.jpg',
+    galleryImgs: [
+      {
+        src: '/hackathon-base/sim-ormawa-polinela.jpg',
+        caption: 'Landing page Portal Resmi Kemahasiswaan Politeknik Negeri Lampung — SIM ORMAWA, HMJ & HIMA (8 Jurusan · 43 Prodi).',
+      },
+      {
+        src: '/hackathon-base/sim-ormawa-multitenant.svg',
+        caption: 'Diagram arsitektur isolasi data Multi-Tenant berjenjang antara Super Admin, ORMAWA/UKM, HMJ Induk, dan HIMA Prodi.',
+      },
+    ],
+    tagline:
+      'Satu portal web terpusat berbasis Multi-Tenant untuk mengelola kepengurusan, pengajuan program kerja, proposal kegiatan, anggaran keuangan, realisasi LPJ, hingga inventaris organisasi mahasiswa di lingkungan Politeknik Negeri Lampung secara tertib, transparan, dan mudah diaudit.',
+    challenge:
+      'Administrasi puluhan organisasi mahasiswa (ORMAWA/UKM, HMJ, dan HIMA pada 8 Jurusan & 43 Program Studi) sering tersebar di dokumen dan spreadsheet terpisah, menyulitkan pelacakan status persetujuan proker/LPJ, transparansi anggaran, serta berisiko mencampur data antar-organisasi.',
+    solution:
+      'Membangun sistem monorepo full-stack berbasis Next.js 16, React 19, TypeScript, Tailwind CSS, Express 5, dan Prisma ORM dengan arsitektur Multi-Tenant ketat: memisahkan ruang data tiap organisasi, menerapkan workflow review berjenjang HIMA → HMJ Induk dan ORMAWA/HMJ → Super Admin, validasi kontrak Zod, penyimpanan PDF privat tervalidasi, serta jejak Audit Log SHA-256.',
+    features: [
+      'Isolasi Data Multi-Tenant Ketat: Setiap ORMAWA/UKM, HMJ, dan HIMA memiliki ruang data terisolasi yang divalidasi langsung dari sesi server.',
+      'Hierarki 4 Dashboard Aktor: Portal khusus untuk Super Admin institusi, ORMAWA/UKM mandiri, HMJ Induk (8 Jurusan), dan HIMA Anak (43 Prodi).',
+      'Workflow Review Berjenjang: Verifikasi akun & pengajuan HIMA ditinjau HMJ Induk, sedangkan ORMAWA & HMJ ditinjau oleh Super Admin.',
+      'Program Kerja, Proposal & LPJ Terintegrasi: Pengelolaan siklus proker dari Draft, Review, Berjalan, hingga realisasi LPJ dengan dokumen PDF privat tervalidasi.',
+      'Manajemen Keuangan & Inventaris: Pencatatan anggaran, pemasukan, pengeluaran, pengajuan kebutuhan, serta inventaris alat organisasi.',
+      'Keamanan & Audit Log SHA-256: Setiap keputusan reviewer dan aksi lintas-tenant tercatat secara kriptografis menggunakan hash SHA-256.',
+      'Live deployment di sim-ormawa-polinela.vercel.app dan repository monorepo di github.com/Rezafahmi17/pengelolaan-ormawa-hmj-dan-hima.',
+    ],
+    impact: [
+      'Menyatukan tata kelola kepengurusan, proposal, keuangan, LPJ, dan inventaris seluruh organisasi mahasiswa Polinela dalam satu portal transparan.',
+      'Menjamin integritas audit dan mencegah kebocoran data lintas-himpunan melalui tenant guard berlapis serta Audit Log SHA-256.',
+      'Membuktikan penguasaan rekayasa monorepo enterprise modern (Turborepo, Next.js, Express, TypeScript, Prisma ORM, Zod, Vitest & Playwright).',
+    ],
+    stack: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Node.js',
+      'Express.js',
+      'Prisma ORM',
+      'MySQL',
+      'Zod',
+      'Turborepo',
+      'Multi-Tenant',
+      'SHA-256 Audit',
+      'Vercel',
+    ],
+    links: {
+      live: 'https://sim-ormawa-polinela.vercel.app/',
+      github: 'https://github.com/Rezafahmi17/pengelolaan-ormawa-hmj-dan-hima',
+    },
+  },
+  {
+    id: 'work-02',
+    number: '02',
+    total: '07',
     slug: 'kasirin',
     title: 'Kasirin — Aplikasi Kasir & Multi-Tenant Commerce',
     shortTitle: 'KASIRIN COMMERCE',
@@ -170,7 +246,7 @@ export const SELECTED_WORKS = [
     ticketBg: '#FF4D00',
     ticketFg: '#121212',
     ticketTextLight: false,
-    gridMode: 'left-7',
+    gridMode: 'right-5',
     heroImg: '/hackathon-base/kasirin-dashboard.png',
     galleryImgs: [
       {
@@ -215,8 +291,8 @@ export const SELECTED_WORKS = [
     },
   },
   {
-    id: 'work-02',
-    number: '02',
+    id: 'work-03',
+    number: '03',
     total: '07',
     slug: 'kopi-nusantara',
     title: 'Kopi Nusantara — QR Ordering & Tracking',
@@ -238,7 +314,7 @@ export const SELECTED_WORKS = [
     ticketBg: '#7348FF',
     ticketFg: '#121212',
     ticketTextLight: false,
-    gridMode: 'right-5',
+    gridMode: 'full-12',
     heroImg: '/hackathon-base/base-realms-1.webp',
     galleryImgs: [
       {
@@ -283,70 +359,6 @@ export const SELECTED_WORKS = [
     links: {
       live: 'https://kopi-nusantara-jawa.netlify.app/',
       github: 'https://github.com/Rezafahmi17/kopi-nusantara',
-    },
-  },
-  {
-    id: 'work-03',
-    number: '03',
-    total: '07',
-    slug: 'sim-ormawa-hmj',
-    title: 'SIM ORMAWA & HMJ — Multi-Tenant System',
-    shortTitle: 'SIM MULTI-TENANT',
-    ticketTitle: 'SIM ORMAWA & HMJ',
-    category: 'Multi-Tenant Web Architecture',
-    creativeField: 'Multi-Tenant MIS & Hierarchical RBAC',
-    year: '2026',
-    duration: 'Sep 2026 – Okt 2026',
-    client: 'Organisasi Kemahasiswaan (ORMAWA, HMJ & HIMA)',
-    role: 'Full-Stack Systems Developer',
-    deliverables: [
-      'Multi-Tenant Data Isolation',
-      'HMJ ↔ HIMA Parent-Child Hierarchy',
-      'Program Kerja & Pengajuan Workflow',
-      'Super Admin Monitoring & Approval',
-    ],
-    toolBadges: ['MT', 'SQL'],
-    ticketBg: '#5CC2E8',
-    ticketFg: '#121212',
-    ticketTextLight: false,
-    gridMode: 'full-12',
-    heroImg: '/hackathon-base/sim-ormawa-multitenant.svg',
-    galleryImgs: [
-      {
-        src: '/hackathon-base/sim-ormawa-multitenant.svg',
-        caption: 'Diagram & antarmuka arsitektur Multi-Tenant SIM ORMAWA, HMJ, dan HIMA dengan isolasi data ketat per organisasi.',
-      },
-    ],
-    tagline:
-      'Sistem Informasi Manajemen ORMAWA, HMJ, dan HIMA berbasis web dengan Arsitektur Multi-Tenant yang menjamin isolasi data antar-organisasi serta alur koordinasi berjenjang di bawah kendali Super Admin.',
-    challenge:
-      'Pengelolaan puluhan organisasi kemahasiswaan (ORMAWA, HMJ, dan HIMA) dalam satu platform menuntut batas privasi data yang ketat agar satu organisasi tidak dapat mengintip dokumen organisasi lain, namun tetap mendukung supervisi berjenjang dari HMJ induk ke HIMA di bawahnya.',
-    solution:
-      'Mengembangkan Sistem Informasi Manajemen berbasis Arsitektur Multi-Tenant dengan aturan kontrol akses berlapis (scoped tenant isolation): memisahkan ruang data ORMAWA, HMJ, dan HIMA secara ketat serta menghubungkan HIMA secara eksklusif hanya ke HMJ induknya dan Super Admin.',
-    features: [
-      'Isolasi penuh antar-ORMAWA: setiap ORMAWA tidak dapat membaca data milik ORMAWA lain.',
-      'Isolasi penuh antar-HMJ & antar-HIMA: HMJ tidak dapat membaca data HMJ lain, dan HIMA tidak dapat membaca data HIMA lain.',
-      'Komunikasi vertikal terarah: HIMA hanya dapat berkomunikasi dan mengajukan berkas kepada HMJ induknya.',
-      'Supervisi HMJ Induk: HMJ dapat melihat struktur kepengurusan, program kerja (proja)/pengajuan, dan akun HIMA binaannya.',
-      'Kontrol Super Admin: memonitor aktivitas seluruh ORMAWA/HMJ serta memproses verifikasi & persetujuan akun ORMAWA/HMJ.',
-    ],
-    impact: [
-      'Menstandarkan tata kelola administrasi, struktur organisasi, dan pengajuan proja kemahasiswaan secara digital.',
-      'Mencegah kebocoran data lintas himpunan melalui pembatasan hak akses berbasis relasi tenant induk-anak.',
-      'Membuktikan kemampuan merancang logika bisnis kompleks dan arsitektur database multi-tenant skala institusi.',
-    ],
-    stack: [
-      'Multi-Tenant Architecture',
-      'RBAC',
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'PHP / Node.js',
-      'Express',
-      'MySQL / SQL Server / Supabase',
-    ],
-    links: {
-      github: 'https://github.com/Rezafahmi17/Pengelolahan-UKM-HMJ-dan-HIMA',
     },
   },
   {
@@ -629,11 +641,18 @@ export const EXPERIENCE_TIMELINE = [
       'Melakukan pengembangan, pengawasan, dan evaluasi terhadap divisi-divisi UKM Olahraga, memberikan arahan kepada kepala & anggota divisi, serta memimpin sebagai Ketua Pelaksana turnamen DIREKTUR CUP Se-Lampung dengan kerja sama tim yang solid.',
   },
   {
-    period: 'SEP 2026 – OKT 2026',
-    role: 'Full-Stack Web Developer — SIM ORMAWA & HMJ Multi-Tenant',
-    org: 'Sistem Informasi Manajemen Kemahasiswaan',
+    period: 'SEP 2026 – NOV 2026',
+    role: 'Full-Stack Systems Developer — SIM ORMAWA, HMJ & HIMA Politeknik Negeri Lampung',
+    org: 'sim-ormawa-polinela.vercel.app · 8 Jurusan & 43 Prodi',
     detail:
-      'Membangun web manajemen ORMAWA, HMJ, dan HIMA berarsitektur Multi-Tenant: isolasi data ketat antar-organisasi, komunikasi terarah HIMA ke HMJ induk, pemantauan proja/struktur oleh HMJ, serta persetujuan akun oleh Super Admin.',
+      'Membangun portal kemahasiswaan terpusat berbasis monorepo Multi-Tenant (Next.js, TypeScript, Express, Prisma ORM): isolasi data ketat antar ORMAWA/HMJ/HIMA, workflow review proker, proposal & LPJ berjenjang, anggaran keuangan, inventaris, serta Audit Log SHA-256.',
+  },
+  {
+    period: 'OKT 2026',
+    role: 'Full-Stack Web Developer — Kasirin POS & Multi-Tenant Commerce',
+    org: 'kasirin-toko.vercel.app',
+    detail:
+      'Membangun platform Kasir POS (penjualan & penyewaan barang) dan Multi-Tenant Commerce dengan Next.js, Node.js, Express, dan PostgreSQL lengkap dengan row-level lock stok, struk digital, dan analitik omzet real-time.',
   },
   {
     period: 'AGUS 2026 – SEP 2026',
@@ -724,6 +743,7 @@ export const STACK_MATRIX = [
       'HTML5',
       'CSS3',
       'JavaScript (ES6+)',
+      'TypeScript',
       'React',
       'Next.js',
       'Vite',
@@ -737,9 +757,12 @@ export const STACK_MATRIX = [
     items: [
       'Node.js',
       'Express.js',
+      'Prisma ORM',
+      'Zod Validation',
       'RESTful API',
       'JWT Authentication',
       'Multi-Tenant RBAC',
+      'SHA-256 Audit Log',
       'CRUD Admin Systems',
       'Hapi Framework',
     ],
@@ -763,6 +786,7 @@ export const STACK_MATRIX = [
       'Hermes AI (Telegram/WA)',
       'IBM Granite LLM',
       'AWS Cloud & EC2',
+      'Turborepo & pnpm',
       'Git & GitHub',
       'Postman',
       'Vercel',
@@ -774,6 +798,16 @@ export const STACK_MATRIX = [
 // Complete Playground / Archive Vault (20 Verified Projects, Certificates & Achievements)
 export const PLAYGROUND_ARCHIVE = [
   {
+    slug: 'sim-ormawa-hmj',
+    title: 'SIM ORMAWA, HMJ & HIMA — Politeknik Negeri Lampung',
+    category: 'WEB APPS',
+    issuer: 'Multi-Tenant Portal Polinela',
+    year: '2026',
+    img: '/hackathon-base/sim-ormawa-polinela.jpg',
+    accent: '#10B981',
+    code: 'WEB-01',
+  },
+  {
     slug: 'kasirin',
     title: 'Kasirin — Aplikasi Kasir & Multi-Tenant Commerce',
     category: 'WEB APPS',
@@ -781,7 +815,7 @@ export const PLAYGROUND_ARCHIVE = [
     year: '2026',
     img: '/hackathon-base/kasirin-dashboard.png',
     accent: '#FF4D00',
-    code: 'WEB-00',
+    code: 'WEB-02',
   },
   {
     slug: 'kopi-nusantara',
@@ -791,7 +825,7 @@ export const PLAYGROUND_ARCHIVE = [
     year: '2026',
     img: '/hackathon-base/base-realms-1.webp',
     accent: '#7348FF',
-    code: 'WEB-01',
+    code: 'WEB-03',
   },
   {
     slug: 'portfolio-website-smanrp',
@@ -801,17 +835,7 @@ export const PLAYGROUND_ARCHIVE = [
     year: '2026',
     img: '/hackathon-base/sman1-portfolio.png',
     accent: '#F4BE2A',
-    code: 'WEB-02',
-  },
-  {
-    slug: 'sim-ormawa-hmj',
-    title: 'SIM ORMAWA & HMJ — Multi-Tenant',
-    category: 'WEB APPS',
-    issuer: 'Multi-Tenant RBAC Web App',
-    year: '2026',
-    img: '/hackathon-base/sim-ormawa-multitenant.svg',
-    accent: '#5CC2E8',
-    code: 'WEB-03',
+    code: 'WEB-04',
   },
   {
     slug: 'hermes-ai-telegram-whatsapp',

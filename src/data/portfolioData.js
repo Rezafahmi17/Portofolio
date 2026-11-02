@@ -4,7 +4,7 @@ export const PORTFOLIO_DATA = {
   profile: {
     name: "Reza Fahmi Alkhamdani",
     role: "Junior Web Developer · Full-Stack & AI Engineer",
-    bio: "Mahasiswa D3 Manajemen Informatika Politeknik Negeri Lampung dengan pengalaman kepemimpinan organisasi dan pengembangan web full-stack. Terampil pada Frontend (HTML, CSS, JavaScript, React, Vite, Tailwind CSS, PHP), Backend (Node.js, Express, JWT Auth, Multi-Tenant), Database (MySQL, SQL Server, Supabase), Microsoft Office, serta AI Agents (Hermes AI Telegram/WhatsApp & IBM Granite).",
+    bio: "Mahasiswa D3 Manajemen Informatika Politeknik Negeri Lampung dengan pengalaman kepemimpinan organisasi dan pengembangan web full-stack. Terampil pada Frontend (Next.js, TypeScript, React, Vite, Tailwind CSS, HTML, CSS, PHP), Backend (Node.js, Express, Prisma ORM, JWT Auth, Multi-Tenant), Database (PostgreSQL, MySQL, SQL Server, Supabase), Microsoft Office, serta AI Agents (Hermes AI Telegram/WhatsApp & IBM Granite).",
     location: "Bandar Mataram, Lampung Tengah, Lampung",
     phone: "+62 812 7873 4115",
     email: "rezaalkhamdani@gmail.com",
@@ -15,6 +15,14 @@ export const PORTFOLIO_DATA = {
     },
   },
   experience: [
+    {
+      title: "SIM ORMAWA, HMJ & HIMA — Politeknik Negeri Lampung",
+      period: "Sep 2026 – Nov 2026",
+      description: [
+        "Membangun portal terpusat berbasis Multi-Tenant untuk ORMAWA/UKM, HMJ (8 Jurusan), dan HIMA (43 Prodi) di Politeknik Negeri Lampung menggunakan Next.js, TypeScript, Express, dan Prisma ORM.",
+        "Mengelola kepengurusan, program kerja, proposal kegiatan, anggaran keuangan, realisasi LPJ, inventaris, serta Audit Log SHA-256.",
+      ],
+    },
     {
       title: "Kasirin — Aplikasi Kasir & Multi-Tenant Commerce",
       period: "2026",
@@ -30,14 +38,6 @@ export const PORTFOLIO_DATA = {
         "Melakukan pengembangan, pengawasan, dan evaluasi terhadap divisi-divisi UKM Olahraga.",
         "Memberikan saran serta arahan terhadap kepala divisi dan anggota divisi UKM Olahraga.",
         "Ketua Pelaksana DIREKTUR CUP Se-Lampung dan membangun kerja sama tim (teamwork) dengan baik.",
-      ],
-    },
-    {
-      title: "SIM ORMAWA & HMJ — Multi-Tenant Web Application",
-      period: "Sep 2026 – Okt 2026",
-      description: [
-        "Membangun Sistem Informasi Manajemen ORMAWA, HMJ, dan HIMA berbasis web dengan Arsitektur Multi-Tenant.",
-        "Isolasi data ketat antar-ORMAWA, antar-HMJ, dan antar-HIMA; komunikasi HIMA terarah ke HMJ induk; monitoring & approval oleh Super Admin.",
       ],
     },
     {
@@ -80,6 +80,7 @@ export const PORTFOLIO_DATA = {
     { name: "HTML", category: "Frontend" },
     { name: "CSS", category: "Frontend" },
     { name: "JavaScript", category: "Frontend / Backend" },
+    { name: "TypeScript", category: "Frontend / Backend" },
     { name: "React", category: "Frontend" },
     { name: "Next.js", category: "Full-Stack Web" },
     { name: "Vite", category: "Frontend" },
@@ -87,8 +88,11 @@ export const PORTFOLIO_DATA = {
     { name: "PHP", category: "Frontend / Backend" },
     { name: "Node.js", category: "Backend" },
     { name: "Express", category: "Backend" },
+    { name: "Prisma ORM", category: "Backend / Database" },
+    { name: "Zod", category: "Schema Validation" },
     { name: "JWT Authentication", category: "Backend Security" },
     { name: "Multi-Tenant Architecture", category: "System Design" },
+    { name: "SHA-256 Audit Log", category: "Security" },
     { name: "RESTful API", category: "Backend" },
     { name: "PostgreSQL", category: "Database" },
     { name: "MySQL", category: "Database" },
@@ -99,6 +103,7 @@ export const PORTFOLIO_DATA = {
     { name: "AI Agents", category: "AI" },
     { name: "IBM Granite", category: "Generative AI" },
     { name: "AWS Cloud & EC2", category: "Cloud" },
+    { name: "Turborepo", category: "Monorepo Tooling" },
     { name: "GSAP Animations", category: "Frontend" },
     { name: "Postman", category: "API Testing" },
     { name: "Vercel", category: "Deployment" },
@@ -106,6 +111,13 @@ export const PORTFOLIO_DATA = {
     { name: "Git & GitHub", category: "Tools" },
   ],
   projects: [
+    {
+      slug: "sim-ormawa-hmj",
+      title: "SIM ORMAWA, HMJ & HIMA — Politeknik Negeri Lampung",
+      category: "Featured Web Project",
+      description:
+        "Portal kemahasiswaan terpusat berbasis Multi-Tenant untuk mengelola kepengurusan, program kerja, proposal, anggaran keuangan, LPJ, inventaris, dan Audit Log SHA-256 pada 8 Jurusan & 43 Prodi Polinela.",
+    },
     {
       slug: "kasirin",
       title: "Kasirin — Aplikasi Kasir & Multi-Tenant Commerce",
@@ -126,13 +138,6 @@ export const PORTFOLIO_DATA = {
       category: "Featured Web Project",
       description:
         "Website sekolah dengan Halaman Publik interaktif dan Dashboard Admin terautentikasi JWT untuk CRUD Berita, Ekstrakurikuler, Galeri, Profil, & Statistik.",
-    },
-    {
-      slug: "sim-ormawa-hmj",
-      title: "SIM ORMAWA & HMJ — Multi-Tenant",
-      category: "Featured Web Project",
-      description:
-        "Sistem Informasi Manajemen ORMAWA, HMJ, dan HIMA berbasis web dengan Arsitektur Multi-Tenant dan persetujuan Super Admin.",
     },
     {
       slug: "hermes-ai-telegram-whatsapp",
@@ -173,13 +178,13 @@ export const PORTFOLIO_DATA = {
     },
   ],
   capabilities: [
-    "Frontend & Full-Stack Web (Next.js, React, Vite, Tailwind CSS, HTML, CSS, PHP)",
-    "Backend Development (Node.js, Express, RESTful API, JWT Auth)",
+    "Frontend & Full-Stack Web (Next.js, TypeScript, React, Vite, Tailwind CSS, HTML, CSS, PHP)",
+    "Backend Development (Node.js, Express, Prisma ORM, Zod, RESTful API, JWT Auth)",
     "Database Systems (PostgreSQL, MySQL, SQL Server, Supabase)",
-    "Multi-Tenant Architecture & POS Commerce Systems",
+    "Multi-Tenant Architecture, SHA-256 Audit Log & POS Commerce Systems",
     "AI Agents & Hermes AI (Telegram/WhatsApp Integration)",
     "IBM Granite Data Classification & Summarization",
-    "AWS Cloud Basics, Vercel & Netlify Deployment",
+    "AWS Cloud Basics, Turborepo, Vercel & Netlify Deployment",
     "Microsoft Office & Organizational Leadership",
   ],
 };

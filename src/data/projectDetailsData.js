@@ -2,6 +2,51 @@
 // Synchronized 100% with Reza Fahmi Alkhamdani's CV & verified documentation.
 
 export const PROJECT_DETAILS_DATA = {
+  "sim-ormawa-hmj": {
+    title: "SIM ORMAWA, HMJ & HIMA — Politeknik Negeri Lampung",
+    category: "Multi-Tenant Campus Management System",
+    heroImg: "/hackathon-base/sim-ormawa-polinela.jpg",
+    tagline:
+      "Satu portal web terpusat berbasis Multi-Tenant untuk mengelola kepengurusan, pengajuan program kerja, proposal kegiatan, anggaran keuangan, realisasi LPJ, hingga inventaris organisasi mahasiswa di lingkungan Politeknik Negeri Lampung.",
+    year: "2026",
+    kicker: "Flagship Multi-Tenant Campus Portal",
+    featuresTitle: "Arsitektur Multi-Tenant & Fitur Portal Polinela",
+    impactTitle: "System Architecture & Institutional Impact",
+    stackTitle: "Tech Stack",
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "Prisma ORM",
+      "MySQL",
+      "Zod",
+      "Turborepo",
+      "Multi-Tenant",
+      "SHA-256 Audit",
+      "Vercel",
+    ],
+    features: [
+      "Isolasi Data Multi-Tenant Ketat — Memisahkan ruang data ORMAWA/UKM, HMJ (8 Jurusan), dan HIMA (43 Prodi) berdasarkan sesi server tervalidasi.",
+      "Workflow Review Berjenjang — Verifikasi HIMA ditinjau HMJ Induk, sedangkan verifikasi ORMAWA & HMJ ditinjau oleh Super Admin institusi.",
+      "Proker, Proposal & LPJ Terintegrasi — Siklus pengelolaan program kerja, unggah dokumen PDF privat tervalidasi, dan laporan pertanggungjawaban.",
+      "Manajemen Keuangan & Inventaris — Pencatatan anggaran, pemasukan, pengeluaran, pengajuan kebutuhan, serta inventaris alat organisasi.",
+      "Keamanan & Audit Log SHA-256 — Seluruh keputusan persetujuan, revisi, dan aktivitas lintas-tenant tercatat dalam jejak audit SHA-256.",
+      "Live deployment di sim-ormawa-polinela.vercel.app dan source code monorepo di github.com/Rezafahmi17/pengelolaan-ormawa-hmj-dan-hima.",
+    ],
+    impact: [
+      "Menstandarkan administrasi organisasi kemahasiswaan Politeknik Negeri Lampung secara tertib, transparan, dan mudah diaudit.",
+      "Mencegah kebocoran data lintas-organisasi melalui tenant guard berlapis dan kontrol akses berbasis peran (RBAC).",
+      "Membuktikan kapabilitas rekayasa monorepo full-stack modern menggunakan Next.js, TypeScript, Express, Prisma ORM, dan Turborepo.",
+    ],
+    links: {
+      live: "https://sim-ormawa-polinela.vercel.app/",
+      repo: "https://github.com/Rezafahmi17/pengelolaan-ormawa-hmj-dan-hima",
+      github: "https://github.com/Rezafahmi17/pengelolaan-ormawa-hmj-dan-hima",
+    },
+  },
   "kasirin": {
     title: "Kasirin — Aplikasi Kasir & Multi-Tenant Commerce",
     category: "Multi-Tenant POS & Commerce Platform",
@@ -124,45 +169,6 @@ export const PROJECT_DETAILS_DATA = {
       live: "https://sma-n-1-rajabasa-permai-plus.netlify.app/",
       repo: "https://github.com/Rezafahmi17/SMA-N-1-Rajabasa-Permai-Plus",
       github: "https://github.com/Rezafahmi17/SMA-N-1-Rajabasa-Permai-Plus",
-    },
-  },
-  "sim-ormawa-hmj": {
-    title: "SIM ORMAWA & HMJ — Multi-Tenant",
-    category: "Multi-Tenant Web Management System",
-    heroImg: "/hackathon-base/sim-ormawa-multitenant.svg",
-    tagline:
-      "Sistem Informasi Manajemen ORMAWA, HMJ, dan HIMA berbasis web dengan Arsitektur Multi-Tenant, isolasi data antar-organisasi, dan kontrol Super Admin.",
-    year: "Sep 2026 – Okt 2026",
-    kicker: "Multi-Tenant System Detail",
-    featuresTitle: "Aturan Isolasi & Fitur Multi-Tenant",
-    impactTitle: "System Architecture Impact",
-    stackTitle: "Tech Stack",
-    stack: [
-      "Multi-Tenant Architecture",
-      "RBAC",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "PHP / Node.js",
-      "Express",
-      "MySQL / SQL Server / Supabase",
-    ],
-    features: [
-      "ORMAWA tidak dapat membaca data ORMAWA lain.",
-      "HMJ tidak dapat membaca data HMJ lain.",
-      "HIMA tidak dapat membaca data HIMA lain.",
-      "HIMA hanya dapat berkomunikasi dengan HMJ induknya.",
-      "HMJ dapat melihat struktur, proja/pengajuan, dan akun HIMA di bawahnya sesuai fungsi aplikasi.",
-      "Super Admin memonitor ORMAWA/HMJ dan memproses persetujuan akun ORMAWA/HMJ.",
-    ],
-    impact: [
-      "Menjamin privasi dan keamanan data setiap organisasi kemahasiswaan dalam satu platform terpusat.",
-      "Mendukung tata kelola berjenjang antara HIMA, HMJ induk, dan Super Admin institusi.",
-      "Membuktikan penguasaan perancangan hak akses multi-tenant dan relasi database bertingkat.",
-    ],
-    links: {
-      repo: "https://github.com/Rezafahmi17/Pengelolahan-UKM-HMJ-dan-HIMA",
-      github: "https://github.com/Rezafahmi17/Pengelolahan-UKM-HMJ-dan-HIMA",
     },
   },
   "hermes-ai-telegram-whatsapp": {

@@ -119,8 +119,8 @@ export default function EditorialShowcase({ onSelectWork }) {
 
             <p className="font-sans text-base sm:text-[17px] text-[#F4EFE6]/75 max-w-[50ch] leading-relaxed">
               Kurasi proyek web aplikasi produksi dan spesialisasi inti di bidang{' '}
-              <span className="text-[#F4EFE6] font-semibold">Full-Stack Web (React, PHP, Node/Express)</span>,{' '}
-              <span className="text-[#F4EFE6] font-semibold">Arsitektur Multi-Tenant &amp; JWT</span>, serta{' '}
+              <span className="text-[#F4EFE6] font-semibold">Full-Stack Web (Next.js, TypeScript, React, Node/Express)</span>,{' '}
+              <span className="text-[#F4EFE6] font-semibold">Arsitektur Multi-Tenant &amp; Audit SHA-256</span>, serta{' '}
               <span className="text-[#F4EFE6] font-semibold">Hermes AI &amp; IBM Granite</span>.
               Klik tiket mana saja untuk membuka studi kasus lengkap.
             </p>
@@ -342,6 +342,17 @@ export default function EditorialShowcase({ onSelectWork }) {
                       <ExternalLink size={13} />
                     </a>
                   )}
+                  {SELECTED_WORKS[0].links?.github && (
+                    <a
+                      href={SELECTED_WORKS[0].links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-[#121212]/25 font-mono text-xs uppercase hover:bg-[#121212] hover:text-white transition-colors"
+                    >
+                      <Github size={13} />
+                      <span>GitHub</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -367,6 +378,17 @@ export default function EditorialShowcase({ onSelectWork }) {
                     <span>Read Case Study</span>
                     <ArrowUpRight size={14} />
                   </button>
+                  {SELECTED_WORKS[1].links?.live && (
+                    <a
+                      href={SELECTED_WORKS[1].links.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-[#121212]/25 font-mono text-xs uppercase hover:bg-[#121212] hover:text-white transition-colors"
+                    >
+                      <span>Live App</span>
+                      <ExternalLink size={13} />
+                    </a>
+                  )}
                   {SELECTED_WORKS[1].links?.github && (
                     <a
                       href={SELECTED_WORKS[1].links.github}
@@ -400,7 +422,7 @@ export default function EditorialShowcase({ onSelectWork }) {
               </div>
             </div>
 
-            {/* Project 03: Flagship Full-Width 12-Column Editorial Spread (SIM ORMAWA & HMJ Multi-Tenant) */}
+            {/* Project 03: Flagship Full-Width 12-Column Editorial Spread */}
             <div className="pt-4 space-y-5">
               <div
                 onClick={() => onSelectWork(SELECTED_WORKS[2])}
@@ -411,10 +433,10 @@ export default function EditorialShowcase({ onSelectWork }) {
                   src={SELECTED_WORKS[2].heroImg}
                   alt={SELECTED_WORKS[2].title}
                   loading="lazy"
-                  className="w-full h-full object-contain p-2 sm:p-4 transition-transform duration-700 ease-expo-out group-hover:scale-[1.02]"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 ease-expo-out group-hover:scale-[1.03]"
                 />
-                <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#5CC2E8] text-[#121212] font-mono font-bold text-xs">
-                  03 / {totalFlagship} — MULTI-TENANT ARCHITECTURE
+                <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#7348FF] text-white font-mono font-bold text-xs uppercase">
+                  03 / {totalFlagship} — {SELECTED_WORKS[2].category}
                 </span>
               </div>
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#121212]/15 pb-6">
@@ -429,14 +451,38 @@ export default function EditorialShowcase({ onSelectWork }) {
                     {SELECTED_WORKS[2].tagline}
                   </p>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => onSelectWork(SELECTED_WORKS[2])}
-                  className="self-start md:self-auto shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#FF3B00] text-white font-mono text-xs uppercase font-bold hover:bg-[#121212] transition-colors cursor-pointer"
-                >
-                  <span>Inspect Multi-Tenant Case</span>
-                  <ArrowUpRight size={14} />
-                </button>
+                <div className="flex flex-wrap items-center gap-3 shrink-0">
+                  <button
+                    type="button"
+                    onClick={() => onSelectWork(SELECTED_WORKS[2])}
+                    className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#FF3B00] text-white font-mono text-xs uppercase font-bold hover:bg-[#121212] transition-colors cursor-pointer"
+                  >
+                    <span>Read Case Study</span>
+                    <ArrowUpRight size={14} />
+                  </button>
+                  {SELECTED_WORKS[2].links?.live && (
+                    <a
+                      href={SELECTED_WORKS[2].links.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-[#121212]/25 font-mono text-xs uppercase hover:bg-[#121212] hover:text-white transition-colors"
+                    >
+                      <span>Live App</span>
+                      <ExternalLink size={13} />
+                    </a>
+                  )}
+                  {SELECTED_WORKS[2].links?.github && (
+                    <a
+                      href={SELECTED_WORKS[2].links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-[#121212]/25 font-mono text-xs uppercase hover:bg-[#121212] hover:text-white transition-colors"
+                    >
+                      <Github size={13} />
+                      <span>GitHub</span>
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
 

@@ -18,10 +18,10 @@ export const PROJECT_META = [
   {
     id: 2,
     slug: "sim-ormawa-hmj",
-    title: "SIM ORMAWA & HMJ — Multi-Tenant",
+    title: "SIM ORMAWA, HMJ & HIMA — Politeknik Negeri Lampung",
     category: "Featured Web Project",
-    color: "bg-sky-500",
-    img: "/hackathon-base/sim-ormawa-multitenant.svg",
+    color: "bg-emerald-500",
+    img: "/hackathon-base/sim-ormawa-polinela.jpg",
   },
   {
     id: 3,

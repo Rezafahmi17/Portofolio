@@ -259,7 +259,7 @@ export default function HeroCanvas({ onOpenQuickProject }) {
                 shuffleOffset={offsets[2]}
               >
                 <div className="px-3.5 py-2 rounded-lg bg-[#6E44FF] text-[#F6F5F0] border-2 border-[#121212] shadow-md font-mono text-[10.5px] font-bold uppercase tracking-wider flex items-center gap-2">
-                  <span>★ REACT · PHP · EXPRESS · SQL</span>
+                  <span>★ NEXT.JS · TS · EXPRESS · SQL</span>
                 </div>
               </DraggableArtifact>
             </div>
@@ -273,19 +273,19 @@ export default function HeroCanvas({ onOpenQuickProject }) {
                 initialRotate={-8}
                 resetSignal={shuffleSeed}
                 shuffleOffset={offsets[3]}
-                onTap={() => onOpenQuickProject?.('kopi-nusantara')}
+                onTap={() => onOpenQuickProject?.('sim-ormawa-hmj')}
               >
                 <div className="w-[156px] p-2 pb-3 rounded-lg bg-[#F6F5F0] border-2 border-[#121212] shadow-xl">
                   <div className="aspect-[4/3] rounded overflow-hidden bg-black border border-[#121212]/20 mb-2">
                     <img
-                      src="/hackathon-base/base-realms-1.webp"
-                      alt="Kopi Nusantara QR Preview"
+                      src="/hackathon-base/sim-ormawa-polinela.jpg"
+                      alt="SIM ORMAWA Polinela Preview"
                       className="w-full h-full object-cover"
                       draggable={false}
                     />
                   </div>
                   <div className="flex items-center justify-between font-mono text-[8.5px] font-bold uppercase text-[#121212]">
-                    <span>KOPI QR // LIVE</span>
+                    <span>SIM ORMAWA // LIVE</span>
                     <span className="text-[#FF3B00]">TAP ↗</span>
                   </div>
                 </div>
