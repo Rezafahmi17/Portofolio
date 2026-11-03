@@ -66,7 +66,7 @@ export const HERO_STICKERS = [
   {
     id: 'sticker-verified',
     type: 'pill-stamp',
-    label: '20+ VERIFIED WORKS & CERTS ★ IBM · AWS · DICODING · XCODE',
+    label: '22+ VERIFIED WORKS, CERTS & HAK CIPTA ★ KEMENKUMHAM · IBM · AWS',
     bg: '#F6F5F0',
     fg: '#121212',
     accent: '#FF3B00',
@@ -155,27 +155,56 @@ export const SELECTED_WORKS = [
     shortTitle: 'SIM ORMAWA POLINELA',
     ticketTitle: 'SIM ORMAWA & HMJ',
     category: 'Multi-Tenant Campus Portal',
-    creativeField: 'Multi-Tenant MIS, RBAC & SHA-256 Audit',
+    creativeField: 'Multi-Tenant MIS, RBAC & SHA-256 Audit · Hak Cipta Kemenkumham No. 001584450',
     year: '2026',
-    duration: '2026 · Production Live',
+    duration: '2026 · Production Live & Hak Cipta Terdaftar',
     client: 'Kemahasiswaan Politeknik Negeri Lampung (8 Jurusan · 43 Prodi)',
-    role: 'Full-Stack Systems Developer',
+    role: 'Full-Stack Systems Developer & Pencipta Resmi',
     deliverables: [
+      'Surat Pencatatan Hak Cipta Kemenkumham RI (No. 001584450)',
       'Isolasi Data Multi-Tenant (ORMAWA, HMJ & HIMA)',
       'Workflow Review Proker, Proposal & LPJ',
       'Manajemen Anggaran Keuangan & Inventaris',
       'Audit Log SHA-256 & Dokumen PDF Tervalidasi',
     ],
-    toolBadges: ['MT', 'TS'],
+    toolBadges: ['HK', 'MT', 'TS'],
     ticketBg: '#10B981',
     ticketFg: '#121212',
     ticketTextLight: false,
     gridMode: 'left-7',
     heroImg: '/hackathon-base/sim-ormawa-polinela.jpg',
+    hakCipta: {
+      terdaftar: true,
+      nomorPencatatan: '001584450',
+      nomorPermohonan: 'EC002026218676',
+      tanggalPermohonan: '3 November 2026',
+      tanggalPengumuman: '2 November 2026',
+      jenisCiptaan: 'Program Komputer',
+      judulCiptaan: 'Sistem Informasi Manajemen ORMAWA dan HMJ Berbasis Web dengan Arsitektur Multi - Tenant',
+      masaPerlindungan: '50 Tahun sejak pertama kali diumumkan',
+      instansi: 'Kementerian Hukum Republik Indonesia (DJKI)',
+      pemegangHakCipta: 'Kurniawan Saputra, S.Kom., M.Kom',
+      pencipta: [
+        'Kurniawan Saputra, S.Kom., M.Kom',
+        'Tego Saputra',
+        'Reza Fahmi Alkhamdani',
+      ],
+      pdfUrl: '/certificates/hak-cipta-sim-ormawa-polinela.pdf',
+      lampiranImg: '/certificates/hak-cipta-sim-ormawa-lampiran.webp',
+      certImg: '/certificates/hak-cipta-sim-ormawa-polinela.webp',
+    },
     galleryImgs: [
       {
         src: '/hackathon-base/sim-ormawa-polinela.jpg',
         caption: 'Landing page Portal Resmi Kemahasiswaan Politeknik Negeri Lampung — SIM ORMAWA, HMJ & HIMA (8 Jurusan · 43 Prodi).',
+      },
+      {
+        src: '/certificates/hak-cipta-sim-ormawa-polinela.webp',
+        caption: 'Surat Pencatatan Hak Cipta Resmi Kementerian Hukum RI (DJKI) No. 001584450 (Permohonan EC002026218676) — Program Komputer.',
+      },
+      {
+        src: '/certificates/hak-cipta-sim-ormawa-lampiran.webp',
+        caption: 'Lampiran Resmi Pencipta Hak Cipta Kemenkumham RI — Mencantumkan Reza Fahmi Alkhamdani sebagai Tim Pengembang Resmi.',
       },
       {
         src: '/hackathon-base/sim-ormawa-multitenant.svg',
@@ -183,12 +212,13 @@ export const SELECTED_WORKS = [
       },
     ],
     tagline:
-      'Satu portal web terpusat berbasis Multi-Tenant untuk mengelola kepengurusan, pengajuan program kerja, proposal kegiatan, anggaran keuangan, realisasi LPJ, hingga inventaris organisasi mahasiswa di lingkungan Politeknik Negeri Lampung secara tertib, transparan, dan mudah diaudit.',
+      'Satu portal web terpusat berbasis Multi-Tenant untuk mengelola kepengurusan, pengajuan program kerja, proposal kegiatan, anggaran keuangan, realisasi LPJ, hingga inventaris organisasi mahasiswa di lingkungan Politeknik Negeri Lampung secara tertib, transparan, dan terdaftar Hak Cipta resmi di Kementerian Hukum RI.',
     challenge:
       'Administrasi puluhan organisasi mahasiswa (ORMAWA/UKM, HMJ, dan HIMA pada 8 Jurusan & 43 Program Studi) sering tersebar di dokumen dan spreadsheet terpisah, menyulitkan pelacakan status persetujuan proker/LPJ, transparansi anggaran, serta berisiko mencampur data antar-organisasi.',
     solution:
-      'Membangun sistem monorepo full-stack berbasis Next.js 16, React 19, TypeScript, Tailwind CSS, Express 5, dan Prisma ORM dengan arsitektur Multi-Tenant ketat: memisahkan ruang data tiap organisasi, menerapkan workflow review berjenjang HIMA → HMJ Induk dan ORMAWA/HMJ → Super Admin, validasi kontrak Zod, penyimpanan PDF privat tervalidasi, serta jejak Audit Log SHA-256.',
+      'Membangun sistem monorepo full-stack berbasis Next.js 16, React 19, TypeScript, Tailwind CSS, Express 5, dan Prisma ORM dengan arsitektur Multi-Tenant ketat: memisahkan ruang data tiap organisasi, menerapkan workflow review berjenjang HIMA → HMJ Induk dan ORMAWA/HMJ → Super Admin, validasi kontrak Zod, penyimpanan PDF privat tervalidasi, serta jejak Audit Log SHA-256. Karya ini telah resmi mendapatkan Surat Pencatatan Hak Cipta Kemenkumham RI No. 001584450.',
     features: [
+      'Tercatat Hak Cipta Resmi Kemenkumham RI: Terdaftar secara hukum di Direktorat Jenderal Kekayaan Intelektual (DJKI) No. 001584450 / EC002026218676 kategori Program Komputer atas nama tim pengembang (Reza Fahmi Alkhamdani, Kurniawan Saputra, Tego Saputra).',
       'Isolasi Data Multi-Tenant Ketat: Setiap ORMAWA/UKM, HMJ, dan HIMA memiliki ruang data terisolasi yang divalidasi langsung dari sesi server.',
       'Hierarki 4 Dashboard Aktor: Portal khusus untuk Super Admin institusi, ORMAWA/UKM mandiri, HMJ Induk (8 Jurusan), dan HIMA Anak (43 Prodi).',
       'Workflow Review Berjenjang: Verifikasi akun & pengajuan HIMA ditinjau HMJ Induk, sedangkan ORMAWA & HMJ ditinjau oleh Super Admin.',
@@ -198,11 +228,13 @@ export const SELECTED_WORKS = [
       'Live deployment di sim-ormawa-polinela.vercel.app dan repository monorepo di github.com/Rezafahmi17/pengelolaan-ormawa-hmj-dan-hima.',
     ],
     impact: [
+      'Meraih perlindungan hukum Hak Cipta (HAKI) selama 50 tahun dari Kementerian Hukum Republik Indonesia.',
       'Menyatukan tata kelola kepengurusan, proposal, keuangan, LPJ, dan inventaris seluruh organisasi mahasiswa Polinela dalam satu portal transparan.',
       'Menjamin integritas audit dan mencegah kebocoran data lintas-himpunan melalui tenant guard berlapis serta Audit Log SHA-256.',
       'Membuktikan penguasaan rekayasa monorepo enterprise modern (Turborepo, Next.js, Express, TypeScript, Prisma ORM, Zod, Vitest & Playwright).',
     ],
     stack: [
+      'Hak Cipta No. 001584450',
       'Next.js',
       'React',
       'TypeScript',
@@ -220,6 +252,7 @@ export const SELECTED_WORKS = [
     links: {
       live: 'https://sim-ormawa-polinela.vercel.app/',
       github: 'https://github.com/Rezafahmi17/pengelolaan-ormawa-hmj-dan-hima',
+      hakCiptaPdf: '/certificates/hak-cipta-sim-ormawa-polinela.pdf',
     },
   },
   {
@@ -795,7 +828,7 @@ export const STACK_MATRIX = [
   },
 ];
 
-// Complete Playground / Archive Vault (20 Verified Projects, Certificates & Achievements)
+// Complete Playground / Archive Vault (22 Verified Projects, Certificates & Hak Cipta)
 export const PLAYGROUND_ARCHIVE = [
   {
     slug: 'sim-ormawa-hmj',
@@ -806,6 +839,16 @@ export const PLAYGROUND_ARCHIVE = [
     img: '/hackathon-base/sim-ormawa-polinela.jpg',
     accent: '#10B981',
     code: 'WEB-01',
+  },
+  {
+    slug: 'hak-cipta-sim-ormawa',
+    title: 'Surat Pencatatan Hak Cipta SIM ORMAWA (Kemenkumham RI)',
+    category: 'HAK CIPTA RESMI',
+    issuer: 'DJKI Kemenkumham RI · No. 001584450',
+    year: '2026',
+    img: '/certificates/hak-cipta-sim-ormawa-polinela.webp',
+    accent: '#10B981',
+    code: 'HK-01',
   },
   {
     slug: 'kasirin',
@@ -856,6 +899,16 @@ export const PLAYGROUND_ARCHIVE = [
     img: '/certificates/skillsbuild-ai-agents.webp',
     accent: '#5CC2E8',
     code: 'IBM-26A',
+  },
+  {
+    slug: 'ibm-skillsbuild-ai-agent-cert',
+    title: 'Data - AI Agent for Data Analysis (IBM SkillsBuild)',
+    category: 'AI & AGENTS',
+    issuer: 'IBM SkillsBuild x Hacktiv8 · Nilai 90/100',
+    year: '2026',
+    img: '/certificates/ibm-skillsbuild-ai-agent-cert.webp',
+    accent: '#6E44FF',
+    code: 'IBM-26E',
   },
   {
     slug: 'skillsbuild-getting-started-data-credly',

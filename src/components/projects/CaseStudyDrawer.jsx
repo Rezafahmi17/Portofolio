@@ -41,18 +41,20 @@ export function resolveCaseStudyItem(itemOrSlug) {
           ?.replace(/^Penerbit:\s*/i, '') || 'Official Credential Issuer',
       role: 'Reza Fahmi Alkhamdani',
       heroImg: detail.heroImg,
-      galleryImgs: [{ src: detail.heroImg, caption: detail.tagline }],
+      hakCipta: detail.hakCipta || null,
+      galleryImgs: detail.galleryImgs || [{ src: detail.heroImg, caption: detail.tagline }],
       tagline: detail.tagline,
       challenge:
         detail.tagline ||
         'Dokumentasi kompetensi resmi yang memvalidasi penguasaan materi teknis dan praktik rekayasa perangkat lunak/AI.',
       solution:
+        detail.solution ||
         'Menyelesaikan seluruh modul pembelajaran, evaluasi ujian akhir, serta implementasi studi kasus sesuai standar industri penyelenggara.',
       features: detail.features || [],
       impact: detail.impact || [],
       stack: detail.stack || [],
       links: detail.links || {},
-      ticketBg: '#F4BE2A',
+      ticketBg: detail.ticketBg || '#F4BE2A',
     };
   }
 
@@ -174,6 +176,17 @@ export default function CaseStudyDrawer({ activeItem, onClose, onSelectWork }) {
           </div>
 
           <div className="flex items-center gap-2.5">
+            {study.hakCipta?.pdfUrl && (
+              <a
+                href={study.hakCipta.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500 text-black font-mono text-[11px] font-bold uppercase tracking-wider hover:bg-emerald-400 transition-colors"
+              >
+                <span>Hak Cipta DJKI</span>
+                <ExternalLink size={12} />
+              </a>
+            )}
             {liveUrl && (
               <a
                 href={liveUrl}
@@ -252,6 +265,72 @@ export default function CaseStudyDrawer({ activeItem, onClose, onSelectWork }) {
               </div>
             </div>
 
+            {/* Official Kemenkumham RI Hak Cipta Callout Banner */}
+            {study.hakCipta && (
+              <div className="mt-8 w-[92%] max-w-[880px] p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-[#072418] via-[#091b14] to-[#0d0d0d] border border-emerald-500/50 shadow-[0_16px_50px_rgba(16,185,129,0.2)] text-left space-y-4">
+                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-emerald-500/20 pb-3">
+                  <div className="flex items-center gap-2.5">
+                    <span className="px-2.5 py-1 rounded bg-emerald-500 text-black font-mono text-[11px] font-bold tracking-wider uppercase">
+                      KEMENKUMHAM RI · DJKI
+                    </span>
+                    <span className="font-mono text-xs text-emerald-300 font-bold">
+                      NO. PENCATATAN: {study.hakCipta.nomorPencatatan}
+                    </span>
+                  </div>
+                  <span className="font-mono text-[11px] text-emerald-400/90">
+                    No. Permohonan: {study.hakCipta.nomorPermohonan}
+                  </span>
+                </div>
+
+                <div className="space-y-1.5">
+                  <p className="font-mono text-[11px] text-emerald-300/80 uppercase tracking-wider">
+                    Jenis Ciptaan: {study.hakCipta.jenisCiptaan} · Masa Perlindungan: {study.hakCipta.masaPerlindungan}
+                  </p>
+                  <h3 className="font-serif text-lg sm:text-xl text-white font-semibold leading-snug">
+                    {study.hakCipta.judulCiptaan}
+                  </h3>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-[#F4EFE6]/85 border-t border-emerald-500/15">
+                  <div>
+                    <p className="text-emerald-400 font-mono text-[10.5px] uppercase">Pemegang Hak Cipta:</p>
+                    <p className="font-medium">{study.hakCipta.pemegangHakCipta}</p>
+                  </div>
+                  <div>
+                    <p className="text-emerald-400 font-mono text-[10.5px] uppercase">Tim Pencipta Terdaftar:</p>
+                    <p className="font-medium">
+                      {study.hakCipta.pencipta?.join(' · ')}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-2 flex flex-wrap items-center gap-3">
+                  {study.hakCipta.pdfUrl && (
+                    <a
+                      href={study.hakCipta.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-black font-sans font-bold text-xs uppercase tracking-wider transition-colors shadow-md"
+                    >
+                      <span>Lihat Surat Pencatatan Resmi (PDF)</span>
+                      <ExternalLink size={13} />
+                    </a>
+                  )}
+                  {study.hakCipta.lampiranImg && (
+                    <a
+                      href={study.hakCipta.lampiranImg}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-emerald-500/40 bg-emerald-950/40 hover:bg-emerald-900/60 text-emerald-200 font-mono text-xs uppercase tracking-wider transition-colors"
+                    >
+                      <span>Lihat Lampiran Pencipta</span>
+                      <ExternalLink size={13} />
+                    </a>
+                  )}
+                </div>
+              </div>
+            )}
+
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3 px-4">
               {liveUrl && (
                 <a
@@ -261,6 +340,40 @@ export default function CaseStudyDrawer({ activeItem, onClose, onSelectWork }) {
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#F4BE2A] text-[#121212] font-sans font-bold text-sm hover:bg-[#FF3B00] hover:text-white transition-colors shadow-lg"
                 >
                   <span>Open Live Deployment / Credential</span>
+                  <ExternalLink size={15} />
+                </a>
+              )}
+              {study.hakCipta?.pdfUrl && (
+                <a
+                  href={study.hakCipta.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500 text-black font-sans font-bold text-sm hover:bg-emerald-400 transition-colors shadow-lg"
+                >
+                  <CheckCircle2 size={16} />
+                  <span>Surat Hak Cipta (PDF)</span>
+                  <ExternalLink size={15} />
+                </a>
+              )}
+              {study.links?.certPdf && (
+                <a
+                  href={study.links.certPdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#6E44FF] text-white font-sans font-bold text-sm hover:bg-[#7E57C2] transition-colors shadow-lg"
+                >
+                  <span>Sertifikat IBM (PDF)</span>
+                  <ExternalLink size={15} />
+                </a>
+              )}
+              {study.links?.transcriptPdf && (
+                <a
+                  href={study.links.transcriptPdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-purple-400/40 bg-purple-950/40 hover:bg-purple-900/60 text-purple-200 font-sans font-semibold text-sm transition-colors shadow-lg"
+                >
+                  <span>Transkrip Nilai (90/100)</span>
                   <ExternalLink size={15} />
                 </a>
               )}

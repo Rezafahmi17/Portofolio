@@ -4,7 +4,7 @@ export const PORTFOLIO_DATA = {
   profile: {
     name: "Reza Fahmi Alkhamdani",
     role: "Junior Web Developer · Full-Stack & AI Engineer",
-    bio: "Mahasiswa D3 Manajemen Informatika Politeknik Negeri Lampung dengan pengalaman kepemimpinan organisasi dan pengembangan web full-stack. Terampil pada Frontend (Next.js, TypeScript, React, Vite, Tailwind CSS, HTML, CSS, PHP), Backend (Node.js, Express, Prisma ORM, JWT Auth, Multi-Tenant), Database (PostgreSQL, MySQL, SQL Server, Supabase), Microsoft Office, serta AI Agents (Hermes AI Telegram/WhatsApp & IBM Granite).",
+    bio: "Mahasiswa D3 Manajemen Informatika Politeknik Negeri Lampung dengan pengalaman kepemimpinan organisasi, pengembangan web full-stack, serta pencipta terdaftar Hak Cipta resmi Kemenkumham RI (No. 001584450). Terampil pada Frontend (Next.js, TypeScript, React, Vite, Tailwind CSS, HTML, CSS, PHP), Backend (Node.js, Express, Prisma ORM, JWT Auth, Multi-Tenant), Database (PostgreSQL, MySQL, SQL Server, Supabase), Microsoft Office, serta AI Agents (Hermes AI Telegram/WhatsApp, IBM SkillsBuild AI Agent & IBM Granite).",
     location: "Bandar Mataram, Lampung Tengah, Lampung",
     phone: "+62 812 7873 4115",
     email: "rezaalkhamdani@gmail.com",
@@ -21,6 +21,7 @@ export const PORTFOLIO_DATA = {
       description: [
         "Membangun portal terpusat berbasis Multi-Tenant untuk ORMAWA/UKM, HMJ (8 Jurusan), dan HIMA (43 Prodi) di Politeknik Negeri Lampung menggunakan Next.js, TypeScript, Express, dan Prisma ORM.",
         "Mengelola kepengurusan, program kerja, proposal kegiatan, anggaran keuangan, realisasi LPJ, inventaris, serta Audit Log SHA-256.",
+        "Tercatat resmi Hak Cipta Program Komputer di Kementerian Hukum RI (DJKI No. 001584450 / EC002026218676, masa perlindungan 50 tahun).",
       ],
     },
     {
@@ -116,7 +117,21 @@ export const PORTFOLIO_DATA = {
       title: "SIM ORMAWA, HMJ & HIMA — Politeknik Negeri Lampung",
       category: "Featured Web Project",
       description:
-        "Portal kemahasiswaan terpusat berbasis Multi-Tenant untuk mengelola kepengurusan, program kerja, proposal, anggaran keuangan, LPJ, inventaris, dan Audit Log SHA-256 pada 8 Jurusan & 43 Prodi Polinela.",
+        "Portal kemahasiswaan terpusat berbasis Multi-Tenant untuk mengelola kepengurusan, program kerja, proposal, anggaran keuangan, LPJ, inventaris, dan Audit Log SHA-256 pada 8 Jurusan & 43 Prodi Polinela (Hak Cipta Kemenkumham No. 001584450).",
+    },
+    {
+      slug: "hak-cipta-sim-ormawa",
+      title: "Surat Pencatatan Hak Cipta SIM ORMAWA (Kemenkumham RI)",
+      category: "Hak Cipta Resmi DJKI",
+      description:
+        "Surat Pencatatan Hak Cipta resmi dari Kementerian Hukum Republik Indonesia (DJKI No. 001584450 / EC002026218676) kategori Program Komputer atas nama tim pengembang (Reza Fahmi Alkhamdani, Kurniawan Saputra, Tego Saputra) dengan masa perlindungan 50 tahun.",
+    },
+    {
+      slug: "ibm-skillsbuild-ai-agent-cert",
+      title: "Data - AI Agent for Data Analysis (IBM SkillsBuild)",
+      category: "IBM SkillsBuild Certificate",
+      description:
+        "Sertifikasi dan Transkrip Resmi IBM SkillsBuild University Education bersama Hacktiv8 Indonesia untuk jalur Data - AI Agent for Data Analysis dengan Nilai Akhir Proyek 90/100 (No. 14523/H8/CSR/ISUE/V/2026).",
     },
     {
       slug: "kasirin",
@@ -148,6 +163,20 @@ export const PORTFOLIO_DATA = {
     },
   ],
   achievements: [
+    {
+      title: "Surat Pencatatan Hak Cipta SIM ORMAWA — Kemenkumham RI (2026)",
+      project: "DJKI Kementerian Hukum Republik Indonesia",
+      description: "Terdaftar resmi Hak Cipta Program Komputer No. 001584450 / EC002026218676 dengan masa perlindungan 50 tahun atas nama Reza Fahmi Alkhamdani, Kurniawan Saputra, dan Tego Saputra.",
+      techStack: ["Hak Cipta Resmi", "DJKI", "HAKI", "Program Komputer"],
+      links: { pdf: "/certificates/hak-cipta-sim-ormawa-polinela.pdf" },
+    },
+    {
+      title: "Data - AI Agent for Data Analysis — Nilai 90/100 (2026)",
+      project: "IBM SkillsBuild x Hacktiv8 Indonesia",
+      description: "Sertifikasi dan Transkrip Resmi No. 14523/H8/CSR/ISUE/V/2026 dengan perolehan skor Proyek Akhir 90/100 (Arsitektur 93, Kelengkapan 91).",
+      techStack: ["IBM Granite", "AI Agents", "Langflow", "IBM Bob", "Vibe Coding"],
+      links: { pdf: "/certificates/ibm-skillsbuild-ai-agent-cert.pdf", transcript: "/certificates/ibm-skillsbuild-ai-agent-transcript.pdf" },
+    },
     {
       title: "Juara 1 Futsal Umum UKM Katolik (2026)",
       project: "Bandar Lampung, Lampung",
@@ -186,5 +215,7 @@ export const PORTFOLIO_DATA = {
     "IBM Granite Data Classification & Summarization",
     "AWS Cloud Basics, Turborepo, Vercel & Netlify Deployment",
     "Microsoft Office & Organizational Leadership",
+    "Hak Cipta Terdaftar Resmi Kemenkumham RI (Program Komputer No. 001584450)",
+    "Data - AI Agent for Data Analysis (IBM SkillsBuild x Hacktiv8 · Nilai 90/100)",
   ],
 };

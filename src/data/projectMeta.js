@@ -159,6 +159,22 @@ export const PROJECT_META = [
     color: "bg-orange-500",
     img: "/hackathon-base/kasirin-dashboard.png",
   },
+  {
+    id: 20,
+    slug: "hak-cipta-sim-ormawa",
+    title: "Surat Hak Cipta SIM ORMAWA (Kemenkumham RI)",
+    category: "Hak Cipta Resmi DJKI",
+    color: "bg-emerald-600",
+    img: "/certificates/hak-cipta-sim-ormawa-polinela.webp",
+  },
+  {
+    id: 21,
+    slug: "ibm-skillsbuild-ai-agent-cert",
+    title: "Data - AI Agent for Data Analysis",
+    category: "IBM SkillsBuild Certificate",
+    color: "bg-purple-600",
+    img: "/certificates/ibm-skillsbuild-ai-agent-cert.webp",
+  },
 ];
 
 export const PROJECT_META_BY_SLUG = PROJECT_META.reduce((accumulator, item) => {
