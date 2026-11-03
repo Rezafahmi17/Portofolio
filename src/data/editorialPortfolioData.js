@@ -66,7 +66,7 @@ export const HERO_STICKERS = [
   {
     id: 'sticker-verified',
     type: 'pill-stamp',
-    label: '22+ VERIFIED WORKS, CERTS & HAK CIPTA ★ KEMENKUMHAM · IBM · AWS',
+    label: '23+ VERIFIED WORKS, CERTS & HAK CIPTA ★ KEMENKUMHAM · PNJ · IBM · AWS',
     bg: '#F6F5F0',
     fg: '#121212',
     accent: '#FF3B00',
@@ -828,7 +828,7 @@ export const STACK_MATRIX = [
   },
 ];
 
-// Complete Playground / Archive Vault (22 Verified Projects, Certificates & Hak Cipta)
+// Complete Playground / Archive Vault (23 Verified Projects, Certificates & Hak Cipta)
 export const PLAYGROUND_ARCHIVE = [
   {
     slug: 'sim-ormawa-hmj',
@@ -886,7 +886,7 @@ export const PLAYGROUND_ARCHIVE = [
     category: 'AI & AGENTS',
     issuer: 'xcode.or.id',
     year: '2026',
-    img: '/certificates/hermes-ai-xcode.svg',
+    img: '/certificates/hermes-ai-xcode.webp',
     accent: '#10B981',
     code: 'XCD-AI1',
   },
@@ -1049,5 +1049,15 @@ export const PLAYGROUND_ARCHIVE = [
     img: '/certificates/ukm-al-banna-peserta.webp',
     accent: '#49A942',
     code: 'ACH-02',
+  },
+  {
+    slug: 'itnsa-competition-pnj',
+    title: 'ITNSA Competition — ITechno Cup 2026 (HIMATIK PNJ)',
+    category: 'COMPETITIONS & CERTS',
+    issuer: 'HIMATIK Politeknik Negeri Jakarta',
+    year: '2026',
+    img: '/certificates/itnsa-itechno-cup-pnj.webp',
+    accent: '#EA337E',
+    code: 'PNJ-IT1',
   },
 ];

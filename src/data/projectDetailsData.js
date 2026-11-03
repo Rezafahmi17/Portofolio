@@ -196,13 +196,13 @@ export const PROJECT_DETAILS_DATA = {
     },
   },
   "hermes-ai-telegram-whatsapp": {
-    title: "Membangun AI Agent Otomatis dengan Hermes AI (Telegram/WhatsApp)",
+    title: "Sertifikat Seminar — Membangun AI Agent Otomatis dengan Hermes AI",
     category: "xcode.or.id Certificate",
-    heroImg: "/certificates/hermes-ai-xcode.svg",
+    heroImg: "/certificates/hermes-ai-xcode.webp",
     tagline:
-      "Sertifikat kompetensi Membangun AI Agent Otomatis dengan Hermes AI dan Integrasi Telegram/WhatsApp dari xcode.or.id.",
+      "Sertifikat Seminar resmi Membangun AI Agent Otomatis dengan Hermes AI dan Integrasi Telegram/WhatsApp dari xcode.or.id.",
     year: "2026",
-    kicker: "Certificate Detail",
+    kicker: "Certificate Detail · XCODE",
     featuresTitle: "Certificate Information",
     impactTitle: "Learning Outcome",
     stackTitle: "Skills / Topics",
@@ -215,8 +215,9 @@ export const PROJECT_DETAILS_DATA = {
     ],
     features: [
       "Penerima: Reza Fahmi Alkhamdani.",
-      "Penerbit: xcode.or.id.",
+      "Penerbit: XCODE (xcode.or.id).",
       "Topik: Membangun AI Agent Otomatis dengan Hermes AI dan Integrasi Telegram/WhatsApp.",
+      "Diterbitkan di Yogyakarta, 5 Juni 2026 dan ditandatangani oleh Cynthia (Direktur XCODE).",
       "Fokus: Konfigurasi agen otonom, alur percakapan otomatis, dan integrasi kanal pesan instan.",
     ],
     impact: [
@@ -224,7 +225,9 @@ export const PROJECT_DETAILS_DATA = {
       "Mampu mengintegrasikan agen AI secara langsung ke platform chat Telegram dan WhatsApp.",
       "Melengkapi keahlian rekayasa web dengan solusi otomatisasi komunikasi cerdas 24/7.",
     ],
-    links: {},
+    links: {
+      certPdf: "/certificates/hermes-ai-xcode.pdf",
+    },
   },
   "backend-js-dicoding": {
     title: "Back-End JavaScript",
@@ -683,7 +686,6 @@ export const PROJECT_DETAILS_DATA = {
     links: {
       live: "https://sim-ormawa-polinela.vercel.app/",
       hakCiptaPdf: "/certificates/hak-cipta-sim-ormawa-polinela.pdf",
-      certPdf: "/certificates/hak-cipta-sim-ormawa-polinela.pdf",
     },
   },
   "ibm-skillsbuild-ai-agent-cert": {
@@ -723,6 +725,43 @@ export const PROJECT_DETAILS_DATA = {
       certPdf: "/certificates/ibm-skillsbuild-ai-agent-cert.pdf",
       transcriptPdf: "/certificates/ibm-skillsbuild-ai-agent-transcript.pdf",
       live: "/certificates/ibm-skillsbuild-ai-agent-cert.pdf",
+    },
+  },
+  "itnsa-competition-pnj": {
+    title: "ITNSA Competition — ITechno Cup 2026 (Politeknik Negeri Jakarta)",
+    category: "IT Network & System Administration Competition",
+    heroImg: "/certificates/itnsa-itechno-cup-pnj.webp",
+    tagline:
+      "Sertifikat Kepesertaan ITNSA Competition (University Student Category) pada ajang kompetisi teknologi nasional ITechno Cup 2026 yang diselenggarakan oleh HIMATIK Politeknik Negeri Jakarta.",
+    year: "2026",
+    kicker: "ITechno Cup 2026 · HIMATIK PNJ",
+    featuresTitle: "Detail Sertifikat & Informasi Kompetisi",
+    impactTitle: "Capaian & Relevansi Kompetensi",
+    stackTitle: "Topik & Bidang Kompetisi",
+    stack: [
+      "IT Network Administration",
+      "System Administration",
+      "Linux Server",
+      "Network Security",
+      "Server Configuration",
+      "ITechno Cup 2026",
+      "Politeknik Negeri Jakarta",
+    ],
+    features: [
+      "Nomor Sertifikat: 995/PL3.13/SRt/ITECHNO CUP/HIMATIK PNJ/IX/2026.",
+      "Penerima: Reza Fahmi Alkhamdani.",
+      "Kategori: Participant — ITNSA Competition (University Student Category).",
+      "Penyelenggara: HIMATIK, Jurusan Teknik Informatika & Komputer, Politeknik Negeri Jakarta.",
+      "Periode Kegiatan: 17 Agustus – 29 September 2026.",
+      "Disahkan oleh Dr. Hata Maulana, S.Si., M.T.I (Ketua Jurusan TIK PNJ), Made Andhika Surya Divananda (Ketua HIMATIK), dan Humayra Risma Hajara (Project Officer).",
+    ],
+    impact: [
+      "Menguji dan memperkuat kapabilitas dalam konfigurasi administrasi jaringan (IT Network) dan administrasi server/sistem (System Administration) tingkat mahasiswa nasional.",
+      "Memperluas jejaring kompetisi teknologi informasi antar institusi politeknik dan universitas se-Indonesia.",
+      "Menjadi bukti aktif partisipasi kompetitif di bidang infrastruktur teknologi jaringan dan sistem.",
+    ],
+    links: {
+      certPdf: "/certificates/itnsa-itechno-cup-pnj.pdf",
     },
   },
 };

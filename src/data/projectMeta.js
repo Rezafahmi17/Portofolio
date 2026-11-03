@@ -29,7 +29,7 @@ export const PROJECT_META = [
     title: "Hermes AI Agent (Telegram/WhatsApp)",
     category: "xcode.or.id Certificate",
     color: "bg-emerald-500",
-    img: "/certificates/hermes-ai-xcode.svg",
+    img: "/certificates/hermes-ai-xcode.webp",
   },
   {
     id: 4,
@@ -174,6 +174,14 @@ export const PROJECT_META = [
     category: "IBM SkillsBuild Certificate",
     color: "bg-purple-600",
     img: "/certificates/ibm-skillsbuild-ai-agent-cert.webp",
+  },
+  {
+    id: 22,
+    slug: "itnsa-competition-pnj",
+    title: "ITNSA Competition PNJ",
+    category: "Competition Certificate",
+    color: "bg-pink-600",
+    img: "/certificates/itnsa-itechno-cup-pnj.webp",
   },
 ];
 

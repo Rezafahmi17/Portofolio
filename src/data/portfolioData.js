@@ -134,6 +134,13 @@ export const PORTFOLIO_DATA = {
         "Sertifikasi dan Transkrip Resmi IBM SkillsBuild University Education bersama Hacktiv8 Indonesia untuk jalur Data - AI Agent for Data Analysis dengan Nilai Akhir Proyek 90/100 (No. 14523/H8/CSR/ISUE/V/2026).",
     },
     {
+      slug: "itnsa-competition-pnj",
+      title: "ITNSA Competition — ITechno Cup 2026 (HIMATIK PNJ)",
+      category: "IT Network & System Administration Competition",
+      description:
+        "Sertifikat Kepesertaan ITNSA Competition (University Student Category) pada ajang kompetisi nasional ITechno Cup 2026 yang diselenggarakan oleh HIMATIK Politeknik Negeri Jakarta.",
+    },
+    {
       slug: "kasirin",
       title: "Kasirin — Aplikasi Kasir & Multi-Tenant Commerce",
       category: "Featured Web Project",
@@ -178,6 +185,13 @@ export const PORTFOLIO_DATA = {
       links: { pdf: "/certificates/ibm-skillsbuild-ai-agent-cert.pdf", transcript: "/certificates/ibm-skillsbuild-ai-agent-transcript.pdf" },
     },
     {
+      title: "Participant ITNSA Competition — ITechno Cup 2026",
+      project: "HIMATIK Politeknik Negeri Jakarta (PNJ)",
+      description: "Peserta kompetisi IT Network & System Administration (ITNSA) tingkat mahasiswa perguruan tinggi nasional pada ajang ITechno Cup 2026 (No. 995/PL3.13/SRt/ITECHNO CUP/HIMATIK PNJ/IX/2026).",
+      techStack: ["Network Administration", "System Administration", "Linux", "Security"],
+      links: { pdf: "/certificates/itnsa-itechno-cup-pnj.pdf" },
+    },
+    {
       title: "Juara 1 Futsal Umum UKM Katolik (2026)",
       project: "Bandar Lampung, Lampung",
       description: "Juara 1 turnamen futsal umum UKM Katolik di Bandar Lampung tahun 2026.",
@@ -217,5 +231,6 @@ export const PORTFOLIO_DATA = {
     "Microsoft Office & Organizational Leadership",
     "Hak Cipta Terdaftar Resmi Kemenkumham RI (Program Komputer No. 001584450)",
     "Data - AI Agent for Data Analysis (IBM SkillsBuild x Hacktiv8 · Nilai 90/100)",
+    "IT Network & System Administration (ITNSA Competition — ITechno Cup PNJ)",
   ],
 };

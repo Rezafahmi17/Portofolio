@@ -355,18 +355,26 @@ export default function CaseStudyDrawer({ activeItem, onClose, onSelectWork }) {
                   <ExternalLink size={15} />
                 </a>
               )}
-              {study.links?.certPdf && (
+              {!study.hakCipta && study.links?.certPdf && (
                 <a
                   href={study.links.certPdf}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#6E44FF] text-white font-sans font-bold text-sm hover:bg-[#7E57C2] transition-colors shadow-lg"
                 >
-                  <span>Sertifikat IBM (PDF)</span>
+                  <span>
+                    {study.slug === 'ibm-skillsbuild-ai-agent-cert'
+                      ? 'Sertifikat IBM (PDF)'
+                      : study.slug === 'hermes-ai-telegram-whatsapp'
+                      ? 'Sertifikat Seminar Xcode (PDF)'
+                      : study.slug === 'itnsa-competition-pnj'
+                      ? 'Sertifikat ITNSA PNJ (PDF)'
+                      : 'Lihat Sertifikat (PDF)'}
+                  </span>
                   <ExternalLink size={15} />
                 </a>
               )}
-              {study.links?.transcriptPdf && (
+              {!study.hakCipta && study.links?.transcriptPdf && (
                 <a
                   href={study.links.transcriptPdf}
                   target="_blank"
