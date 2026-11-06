@@ -183,6 +183,14 @@ export const PROJECT_META = [
     color: "bg-pink-600",
     img: "/certificates/itnsa-itechno-cup-pnj.webp",
   },
+  {
+    id: 23,
+    slug: "tokotrif",
+    title: "TokoTrif (KampusBalik) — Marketplace COD",
+    category: "Featured Web Project",
+    color: "bg-blue-600",
+    img: "/hackathon-base/tokotrif-kampusbalik.png",
+  },
 ];
 
 export const PROJECT_META_BY_SLUG = PROJECT_META.reduce((accumulator, item) => {

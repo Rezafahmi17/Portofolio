@@ -65,29 +65,32 @@ export default function EditorialShowcase({ onSelectWork }) {
     };
   }, [viewMode]);
 
-  // Stacked 7-Ticket Deck Fan Transforms (Screenshot 3 Reference)
+  // Stacked 8-Ticket Deck Fan Transforms (Screenshot 3 Reference)
   const fanTransforms = [
     deckFanned
-      ? 'translate(-180px, -48px) rotate(-18deg)'
-      : 'translate(-84px, -36px) rotate(-12deg)',
+      ? 'translate(-210px, -52px) rotate(-21deg)'
+      : 'translate(-96px, -40px) rotate(-14deg)',
     deckFanned
-      ? 'translate(-120px, -24px) rotate(-12deg)'
-      : 'translate(-56px, -18px) rotate(-8deg)',
+      ? 'translate(-150px, -36px) rotate(-15deg)'
+      : 'translate(-68px, -26px) rotate(-10deg)',
     deckFanned
-      ? 'translate(-60px, -4px) rotate(-6deg)'
-      : 'translate(-28px, -4px) rotate(-4deg)',
+      ? 'translate(-90px, -20px) rotate(-9deg)'
+      : 'translate(-40px, -14px) rotate(-6deg)',
     deckFanned
-      ? 'translate(0px, 8px) rotate(0deg)'
-      : 'translate(0px, 4px) rotate(0deg)',
+      ? 'translate(-30px, -4px) rotate(-3deg)'
+      : 'translate(-14px, -2px) rotate(-2deg)',
     deckFanned
-      ? 'translate(60px, -4px) rotate(6deg)'
-      : 'translate(28px, -4px) rotate(4deg)',
+      ? 'translate(30px, 4px) rotate(3deg)'
+      : 'translate(14px, 4px) rotate(2deg)',
     deckFanned
-      ? 'translate(120px, 12px) rotate(12deg)'
-      : 'translate(56px, 16px) rotate(8deg)',
+      ? 'translate(90px, 16px) rotate(9deg)'
+      : 'translate(42px, 14px) rotate(6deg)',
     deckFanned
-      ? 'translate(180px, 32px) rotate(18deg)'
-      : 'translate(84px, 28px) rotate(12deg)',
+      ? 'translate(150px, 28px) rotate(15deg)'
+      : 'translate(70px, 24px) rotate(10deg)',
+    deckFanned
+      ? 'translate(210px, 42px) rotate(21deg)'
+      : 'translate(98px, 34px) rotate(14deg)',
   ];
 
   return (
@@ -120,7 +123,7 @@ export default function EditorialShowcase({ onSelectWork }) {
             <p className="font-sans text-base sm:text-[17px] text-[#F4EFE6]/75 max-w-[50ch] leading-relaxed">
               Kurasi proyek web aplikasi produksi dan spesialisasi inti di bidang{' '}
               <span className="text-[#F4EFE6] font-semibold">Full-Stack Web (Next.js, TypeScript, React, Node/Express)</span>,{' '}
-              <span className="text-[#F4EFE6] font-semibold">Arsitektur Multi-Tenant &amp; Audit SHA-256</span>, serta{' '}
+              <span className="text-[#F4EFE6] font-semibold">Multi-Tenant, Marketplace COD &amp; Audit SHA-256</span>, serta{' '}
               <span className="text-[#F4EFE6] font-semibold">Hermes AI &amp; IBM Granite</span>.
               Klik tiket mana saja untuk membuka studi kasus lengkap.
             </p>

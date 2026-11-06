@@ -25,6 +25,14 @@ export const PORTFOLIO_DATA = {
       ],
     },
     {
+      title: "TokoTrif (KampusBalik) — Marketplace Multi-Toko COD Kampus",
+      period: "Nov 2026",
+      description: [
+        "Membangun platform marketplace multi-toko khusus area kampus Polinela dengan Next.js 14, React 18, Node.js Express, Socket.IO, dan MySQL 20 tabel.",
+        "Menerapkan transaksi COD tunai (bayar saat bertemu), negosiasi lokasi via chat real-time, stok reserved lock, serta rekonsiliasi keuangan toko dengan ekspor Excel.",
+      ],
+    },
+    {
       title: "Kasirin — Aplikasi Kasir & Multi-Tenant Commerce",
       period: "2026",
       description: [
@@ -105,6 +113,7 @@ export const PORTFOLIO_DATA = {
     { name: "IBM Granite", category: "Generative AI" },
     { name: "AWS Cloud & EC2", category: "Cloud" },
     { name: "Turborepo", category: "Monorepo Tooling" },
+    { name: "Socket.IO Real-Time", category: "Full-Stack Web" },
     { name: "GSAP Animations", category: "Frontend" },
     { name: "Postman", category: "API Testing" },
     { name: "Vercel", category: "Deployment" },
@@ -139,6 +148,13 @@ export const PORTFOLIO_DATA = {
       category: "IT Network & System Administration Competition",
       description:
         "Sertifikat Kepesertaan ITNSA Competition (University Student Category) pada ajang kompetisi nasional ITechno Cup 2026 yang diselenggarakan oleh HIMATIK Politeknik Negeri Jakarta.",
+    },
+    {
+      slug: "tokotrif",
+      title: "TokoTrif (KampusBalik) — Marketplace Multi-Toko COD Kampus",
+      category: "Featured Web Project",
+      description:
+        "Platform marketplace multi-toko khusus area kampus (Politeknik Negeri Lampung) dengan model transaksi COD tunai (Bayar Saat Bertemu), chat langsung real-time via Socket.IO, stok reserved lock, dan dashboard manajemen toko.",
     },
     {
       slug: "kasirin",
@@ -225,6 +241,7 @@ export const PORTFOLIO_DATA = {
     "Backend Development (Node.js, Express, Prisma ORM, Zod, RESTful API, JWT Auth)",
     "Database Systems (PostgreSQL, MySQL, SQL Server, Supabase)",
     "Multi-Tenant Architecture, SHA-256 Audit Log & POS Commerce Systems",
+    "Marketplace Multi-Toko & Real-Time Socket.IO (TokoTrif KampusBalik)",
     "AI Agents & Hermes AI (Telegram/WhatsApp Integration)",
     "IBM Granite Data Classification & Summarization",
     "AWS Cloud Basics, Turborepo, Vercel & Netlify Deployment",

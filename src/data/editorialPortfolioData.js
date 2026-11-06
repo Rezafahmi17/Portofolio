@@ -17,7 +17,7 @@ export const EDITORIAL_PROFILE = {
   heroHeadlineTop: "YOUR PRODUCT'S",
   heroHeadlineBottom: 'BACKSTAGE PASS',
   heroSubheadline:
-    'Mahasiswa Manajemen Informatika Politeknik Negeri Lampung yang merancang aplikasi web full-stack (Next.js, TypeScript, React, Tailwind, Node.js, Prisma, Multi-Database), sistem Multi-Tenant & POS Commerce, serta solusi AI Agent otomatis.',
+    'Mahasiswa Manajemen Informatika Politeknik Negeri Lampung yang merancang aplikasi web full-stack (Next.js, TypeScript, React, Tailwind, Node.js, Prisma, Multi-Database), sistem Multi-Tenant, Marketplace COD KampusBalik (TokoTrif), serta solusi AI Agent otomatis.',
   locationBadge: 'BANDAR MATARAM · LAMPUNG',
   location: 'Bandar Mataram, Lampung Tengah, Lampung',
   institution: 'Politeknik Negeri Lampung',
@@ -37,7 +37,7 @@ export const EDITORIAL_PROFILE = {
   },
   narrative: [
     'Halo! Saya Reza Fahmi Alkhamdani, Mahasiswa Diploma III (D3) Manajemen Informatika di Politeknik Negeri Lampung dengan kombinasi pengalaman pengembangan web full-stack dan kepemimpinan organisasi. Saya terampil membangun antarmuka Frontend (Next.js, TypeScript, React, Vite, Tailwind CSS, HTML, CSS, PHP), layanan Backend (Node.js, Express, Prisma ORM, JWT Auth), serta pengelolaan Database (PostgreSQL, MySQL, SQL Server, Supabase).',
-    'Selain merancang portal produksi seperti SIM ORMAWA, HMJ & HIMA Politeknik Negeri Lampung berarsitektur Multi-Tenant dengan Audit Log SHA-256, platform POS & Multi-Tenant Commerce Kasirin, pemesanan QR UMKM Kopi Nusantara, dan portal sekolah ber-dashboard JWT CRUD, saya aktif mengeksplorasi AI Agent otomatis (Hermes AI Telegram/WhatsApp, IBM Granite, AWS Cloud) serta memimpin sebagai Kepala Departemen Pembinaan UKM Olahraga Polinela & Ketua Pelaksana DIREKTUR CUP Se-Lampung.',
+    'Selain merancang portal produksi seperti SIM ORMAWA, HMJ & HIMA Politeknik Negeri Lampung berarsitektur Multi-Tenant dengan Audit Log SHA-256, platform POS Kasirin, marketplace multi-toko COD KampusBalik (TokoTrif), pemesanan QR UMKM Kopi Nusantara, dan portal sekolah ber-dashboard JWT CRUD, saya aktif mengeksplorasi AI Agent otomatis (Hermes AI Telegram/WhatsApp, IBM Granite, AWS Cloud) serta memimpin sebagai Kepala Departemen Pembinaan UKM Olahraga Polinela & Ketua Pelaksana DIREKTUR CUP Se-Lampung.',
   ],
 };
 
@@ -66,7 +66,7 @@ export const HERO_STICKERS = [
   {
     id: 'sticker-verified',
     type: 'pill-stamp',
-    label: '23+ VERIFIED WORKS, CERTS & HAK CIPTA ★ KEMENKUMHAM · PNJ · IBM · AWS',
+    label: '24+ VERIFIED WORKS, CERTS & HAK CIPTA ★ KEMENKUMHAM · PNJ · IBM · AWS',
     bg: '#F6F5F0',
     fg: '#121212',
     accent: '#FF3B00',
@@ -144,12 +144,12 @@ export const BACKSTAGE_INSTRUMENTS = [
   },
 ];
 
-// 7 Curated Flagship Case Studies (All 4 Real Web Projects + 3 Verified AI/Cloud Specializations)
+// 8 Curated Flagship Case Studies (All 5 Real Web Projects + 3 Verified AI/Cloud Specializations)
 export const SELECTED_WORKS = [
   {
     id: 'work-01',
     number: '01',
-    total: '07',
+    total: '08',
     slug: 'sim-ormawa-hmj',
     title: 'SIM ORMAWA, HMJ & HIMA — Politeknik Negeri Lampung',
     shortTitle: 'SIM ORMAWA POLINELA',
@@ -258,7 +258,7 @@ export const SELECTED_WORKS = [
   {
     id: 'work-02',
     number: '02',
-    total: '07',
+    total: '08',
     slug: 'kasirin',
     title: 'Kasirin — Aplikasi Kasir & Multi-Tenant Commerce',
     shortTitle: 'KASIRIN COMMERCE',
@@ -326,7 +326,77 @@ export const SELECTED_WORKS = [
   {
     id: 'work-03',
     number: '03',
-    total: '07',
+    total: '08',
+    slug: 'tokotrif',
+    title: 'TokoTrif (KampusBalik) — Marketplace Multi-Toko COD Kampus',
+    shortTitle: 'KAMPUSBALIK COD',
+    ticketTitle: 'TOKOTRIF COD',
+    category: 'Marketplace Multi-Toko COD',
+    creativeField: 'Full-Stack E-Commerce & Real-Time COD',
+    year: '2026',
+    duration: '2026 · Production Live',
+    client: 'Mahasiswa & Pelaku Usaha Kampus Polinela',
+    role: 'Full-Stack Web Developer',
+    deliverables: [
+      'Arsitektur Multi-Toko (Multi-Store)',
+      'Transaksi Tunai COD (Bayar Saat Bertemu)',
+      'Real-Time Chat Negosiasi Titik Temu (Socket.IO)',
+      'Stok Reserved Lock & Integritas Transaksi SQL',
+    ],
+    toolBadges: ['COD', 'NX', 'SC'],
+    ticketBg: '#2563EB',
+    ticketFg: '#F6F5F0',
+    ticketTextLight: true,
+    gridMode: 'full-12',
+    heroImg: '/hackathon-base/tokotrif-kampusbalik.png',
+    galleryImgs: [
+      {
+        src: '/hackathon-base/tokotrif-kampusbalik.png',
+        caption: 'Landing page utama KampusBalik / TokoTrif: Marketplace Multi-Toko COD Kampus Polinela (barang preloved, buku, gawai, dan fashion).',
+      },
+    ],
+    tagline:
+      'Platform marketplace multi-toko khusus area kampus (Politeknik Negeri Lampung) dengan model transaksi COD tunai (Bayar Saat Bertemu), chat langsung real-time penjual-pembeli via Socket.IO, stok reserved lock, serta dashboard manajemen toko.',
+    challenge:
+      'Jual beli barang preloved, buku kuliah, dan perlengkapan mahasiswa di sekitar kampus sering terkendala ongkos kirim kurir yang mahal, risiko penipuan transfer online, serta kesulitan menyepakati lokasi dan waktu serah terima barang secara aman dan terorganisir.',
+    solution:
+      'Membangun platform marketplace multi-toko berbasis Next.js 14, React 18, Tailwind CSS, Node.js Express, Socket.IO, dan MySQL (20 tabel relasional) dengan alur COD murni tanpa payment gateway: pembeli dan penjual bernegosiasi titik temu kampus via chat real-time, stok ditahan (reserved) sebelum kesepakatan, konfirmasi lunas otomatis mencatat pendapatan toko, serta pelaporan keuangan terintegrasi dengan ekspor Excel.',
+    features: [
+      'Belanja Dekat Bayar Saat Bertemu: Transaksi tunai COD langsung tanpa perantara kurir dan tanpa ongkos kirim.',
+      'Marketplace Multi-Toko: Setiap pedagang/mahasiswa dapat mendaftarkan toko terverifikasi dengan profil, etalase, dan jam operasional sendiri.',
+      'Real-Time Chat & Negosiasi Lokasi (Socket.IO): Penjual dan pembeli berdiskusi langsung menentukan jadwal dan titik temu di sekitar kampus.',
+      'Stok Aman & Reserved Lock: Kuantitas produk dikunci (reserved) saat checkout sehingga mencegah double-order sebelum COD selesai.',
+      '1 Transaksi SQL Atomik: Pelunasan tunai memotong stok fisik, menambah sold count, mencatat riwayat penjualan, dan membukukan pendapatan secara instan.',
+      'Dashboard Admin Toko & Super Admin: Verifikasi pendaftaran toko, manajemen produk & varian gambar WebP, rekonsiliasi keuangan, serta unduh laporan Excel (.xlsx).',
+      'Live deployment di tokotrif-polinela.vercel.app dan repository monorepo di github.com/Rezafahmi17/tokotrif.',
+    ],
+    impact: [
+      'Memberdayakan sirkular ekonomi mahasiswa kampus Polinela melalui kemudahan jual-beli barang preloved dan buku kuliah.',
+      'Menghilangkan beban ongkir dan risiko penipuan online dengan memastikan barang diperiksa langsung sebelum pembayaran tunai.',
+      'Membuktikan kemampuan merancang arsitektur database relasional kompleks (20 tabel relasional MySQL) dengan komunikasi real-time Socket.IO.',
+    ],
+    stack: [
+      'Next.js 14',
+      'React 18',
+      'Tailwind CSS',
+      'Node.js',
+      'Express.js',
+      'Socket.IO',
+      'MySQL (20 Tabel)',
+      'Zod Validation',
+      'JWT (httpOnly)',
+      'ExcelJS',
+      'Vercel',
+    ],
+    links: {
+      live: 'https://tokotrif-polinela.vercel.app/',
+      github: 'https://github.com/Rezafahmi17/tokotrif',
+    },
+  },
+  {
+    id: 'work-04',
+    number: '04',
+    total: '08',
     slug: 'kopi-nusantara',
     title: 'Kopi Nusantara — QR Ordering & Tracking',
     shortTitle: 'KOPI NUSANTARA',
@@ -395,9 +465,9 @@ export const SELECTED_WORKS = [
     },
   },
   {
-    id: 'work-04',
-    number: '04',
-    total: '07',
+    id: 'work-05',
+    number: '05',
+    total: '08',
     slug: 'portfolio-website-smanrp',
     title: 'SMA N 1 Rajabasa Permai Plus — Website Sekolah',
     shortTitle: 'SMAN 1 RP PLUS',
@@ -465,9 +535,9 @@ export const SELECTED_WORKS = [
     },
   },
   {
-    id: 'work-05',
-    number: '05',
-    total: '07',
+    id: 'work-06',
+    number: '06',
+    total: '08',
     slug: 'skillsbuild-ai-agents',
     title: 'AI Agents & Hermes Telegram/WhatsApp Bot',
     shortTitle: 'AI & HERMES BOT',
@@ -527,9 +597,9 @@ export const SELECTED_WORKS = [
     links: {},
   },
   {
-    id: 'work-06',
-    number: '06',
-    total: '07',
+    id: 'work-07',
+    number: '07',
+    total: '08',
     slug: 'backend-js-dicoding',
     title: 'Back-End Node.js/Express & AWS Cloud',
     shortTitle: 'BACKEND & AWS',
@@ -578,9 +648,9 @@ export const SELECTED_WORKS = [
     links: {},
   },
   {
-    id: 'work-07',
-    number: '07',
-    total: '07',
+    id: 'work-08',
+    number: '08',
+    total: '08',
     slug: 'ibm-granite-credly',
     title: 'IBM Granite Data Intelligence',
     shortTitle: 'IBM GRANITE AI',
@@ -679,6 +749,13 @@ export const EXPERIENCE_TIMELINE = [
     org: 'sim-ormawa-polinela.vercel.app · 8 Jurusan & 43 Prodi',
     detail:
       'Membangun portal kemahasiswaan terpusat berbasis monorepo Multi-Tenant (Next.js, TypeScript, Express, Prisma ORM): isolasi data ketat antar ORMAWA/HMJ/HIMA, workflow review proker, proposal & LPJ berjenjang, anggaran keuangan, inventaris, serta Audit Log SHA-256.',
+  },
+  {
+    period: 'NOV 2026',
+    role: 'Full-Stack Web Developer — TokoTrif (KampusBalik) Marketplace COD',
+    org: 'tokotrif-polinela.vercel.app · Multi-Store COD Polinela',
+    detail:
+      'Membangun platform marketplace multi-toko khusus area kampus (Next.js 14, React 18, Node.js Express, Socket.IO, MySQL 20 tabel): alur transaksi tunai COD (bayar saat bertemu), chat langsung penjual-pembeli real-time, stok reserved lock, serta dashboard manajemen toko & ekspor Excel.',
   },
   {
     period: 'OKT 2026',
@@ -828,7 +905,7 @@ export const STACK_MATRIX = [
   },
 ];
 
-// Complete Playground / Archive Vault (23 Verified Projects, Certificates & Hak Cipta)
+// Complete Playground / Archive Vault (24 Verified Projects, Certificates & Hak Cipta)
 export const PLAYGROUND_ARCHIVE = [
   {
     slug: 'sim-ormawa-hmj',
@@ -879,6 +956,16 @@ export const PLAYGROUND_ARCHIVE = [
     img: '/hackathon-base/sman1-portfolio.png',
     accent: '#F4BE2A',
     code: 'WEB-04',
+  },
+{
+    slug: 'tokotrif',
+    title: 'TokoTrif (KampusBalik) — Marketplace Multi-Toko COD Kampus',
+    category: 'WEB APPS',
+    issuer: 'Multi-Store COD Polinela',
+    year: '2026',
+    img: '/hackathon-base/tokotrif-kampusbalik.png',
+    accent: '#2563EB',
+    code: 'WEB-05',
   },
   {
     slug: 'hermes-ai-telegram-whatsapp',
